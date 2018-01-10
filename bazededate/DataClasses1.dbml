@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="garajauto" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=garajauto;Integrated Security=True" SettingsObjectName="bazededate.Properties.Settings" SettingsPropertyName="garajautoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.brevet_dispozitiv" Member="brevet_dispozitivs">
+    <Type Name="brevet_dispozitiv">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tipbrevet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="mecanic_brevet_dispozitiv" Member="mecanic" ThisKey="fk_mecanic" OtherKey="id" Type="mecanic" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tip_brevet_brevet_dispozitiv" Member="tip_brevet" ThisKey="tipbrevet" OtherKey="id" Type="tip_brevet" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vanzator" Member="vanzators">
+    <Type Name="vanzator">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="data_angajarii" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="salariu" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="fk_director_tehnic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parola" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Association Name="vanzator_vanzare" Member="vanzares" ThisKey="id" OtherKey="fk_angajat" Type="vanzare" />
+      <Association Name="director_tehnic_vanzator" Member="director_tehnic" ThisKey="fk_director_tehnic" OtherKey="id" Type="director_tehnic" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.director_tehnic" Member="director_tehnics">
+    <Type Name="director_tehnic">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(130) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(130) NOT NULL" CanBeNull="false" />
+      <Column Name="salariu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data_angajarii" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Association Name="director_tehnic_vanzator" Member="vanzators" ThisKey="id" OtherKey="fk_director_tehnic" Type="vanzator" />
+      <Association Name="director_tehnic_mecanic" Member="mecanics" ThisKey="id" OtherKey="fk_director" Type="mecanic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dispozitiv" Member="dispozitivs">
+    <Type Name="dispozitiv">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="brevet_necesar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nume" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="dispozitiv_utilizare_dispozitiv" Member="utilizare_dispozitivs" ThisKey="id" OtherKey="fk_dispozitiv" Type="utilizare_dispozitiv" />
+      <Association Name="tip_brevet_dispozitiv" Member="tip_brevet" ThisKey="brevet_necesar" OtherKey="id" Type="tip_brevet" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fabricant" Member="fabricants">
+    <Type Name="fabricant">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nr_telefon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="fabricant_masina" Member="masinas" ThisKey="id" OtherKey="fk_brand" Type="masina" />
+    </Type>
+  </Table>
+  <Table Name="dbo.masina" Member="masinas">
+    <Type Name="masina">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fk_tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_brand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="masina_reparatie" Member="reparaties" ThisKey="vin" OtherKey="fk_masina" Type="reparatie" />
+      <Association Name="fabricant_masina" Member="fabricant" ThisKey="fk_brand" OtherKey="id" Type="fabricant" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="proprietar_masina" Member="proprietar" ThisKey="fk_proprietar" OtherKey="id" Type="proprietar" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="tip_masina" Member="tip" ThisKey="fk_tip" OtherKey="id" Type="tip" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mecanic" Member="mecanics">
+    <Type Name="mecanic">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="data_angajare" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fk_director" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Association Name="mecanic_brevet_dispozitiv" Member="brevet_dispozitivs" ThisKey="id" OtherKey="fk_mecanic" Type="brevet_dispozitiv" />
+      <Association Name="mecanic_operatie" Member="operaties" ThisKey="id" OtherKey="fk_mecanic" Type="operatie" />
+      <Association Name="mecanic_utilizare_dispozitiv" Member="utilizare_dispozitivs" ThisKey="id" OtherKey="fk_mecanic" Type="utilizare_dispozitiv" />
+      <Association Name="director_tehnic_mecanic" Member="director_tehnic" ThisKey="fk_director" OtherKey="id" Type="director_tehnic" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.operatie" Member="operaties">
+    <Type Name="operatie">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_reparatie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descriere" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="fk_piesa" Type="System.String" DbType="NChar(90)" CanBeNull="true" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="mecanic_operatie" Member="mecanic" ThisKey="fk_mecanic" OtherKey="id" Type="mecanic" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="piesa_operatie" Member="piesa" ThisKey="fk_piesa,fk_supplier" OtherKey="nume,fk_supplier" Type="piesa" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="reparatie_operatie" Member="reparatie" ThisKey="fk_reparatie" OtherKey="id" Type="reparatie" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.piesa" Member="piesas">
+    <Type Name="piesa">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="piesa_operatie" Member="operaties" ThisKey="nume,fk_supplier" OtherKey="fk_piesa,fk_supplier" Type="operatie" />
+      <Association Name="piesa_vanzare" Member="vanzares" ThisKey="nume,fk_supplier" OtherKey="fk_nume_piesa,fk_supplier_piesa" Type="vanzare" />
+      <Association Name="supplier_piesa" Member="supplier" ThisKey="fk_supplier" OtherKey="id" Type="supplier" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.proprietar" Member="proprietars">
+    <Type Name="proprietar">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nrcard" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="proprietar_masina" Member="masinas" ThisKey="id" OtherKey="fk_proprietar" Type="masina" />
+      <Association Name="proprietar_vanzare" Member="vanzares" ThisKey="id" OtherKey="fk_proprietar" Type="vanzare" />
+    </Type>
+  </Table>
+  <Table Name="dbo.reparatie" Member="reparaties">
+    <Type Name="reparatie">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_masina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descriere" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
+      <Association Name="reparatie_operatie" Member="operaties" ThisKey="id" OtherKey="fk_reparatie" Type="operatie" />
+      <Association Name="masina_reparatie" Member="masina" ThisKey="fk_masina" OtherKey="vin" Type="masina" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.supplier" Member="suppliers">
+    <Type Name="supplier">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Association Name="supplier_piesa" Member="piesas" ThisKey="id" OtherKey="fk_supplier" Type="piesa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tip" Member="tips">
+    <Type Name="tip">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="tip_masina" Member="masinas" ThisKey="id" OtherKey="fk_tip" Type="masina" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tip_brevet" Member="tip_brevets">
+    <Type Name="tip_brevet">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tip" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Association Name="tip_brevet_brevet_dispozitiv" Member="brevet_dispozitivs" ThisKey="id" OtherKey="tipbrevet" Type="brevet_dispozitiv" />
+      <Association Name="tip_brevet_dispozitiv" Member="dispozitivs" ThisKey="id" OtherKey="brevet_necesar" Type="dispozitiv" />
+    </Type>
+  </Table>
+  <Table Name="dbo.utilizare_dispozitiv" Member="utilizare_dispozitivs">
+    <Type Name="utilizare_dispozitiv">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_dispozitiv" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="dispozitiv_utilizare_dispozitiv" Member="dispozitiv" ThisKey="fk_dispozitiv" OtherKey="id" Type="dispozitiv" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="mecanic_utilizare_dispozitiv" Member="mecanic" ThisKey="fk_mecanic" OtherKey="id" Type="mecanic" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vanzare" Member="vanzares">
+    <Type Name="vanzare">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_angajat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_nume_piesa" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier_piesa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="vanzator_vanzare" Member="vanzator" ThisKey="fk_angajat" OtherKey="id" Type="vanzator" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="piesa_vanzare" Member="piesa" ThisKey="fk_nume_piesa,fk_supplier_piesa" OtherKey="nume,fk_supplier" Type="piesa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="proprietar_vanzare" Member="proprietar" ThisKey="fk_proprietar" OtherKey="id" Type="proprietar" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mecanic_view" Member="mecanic_views">
+    <Type Name="mecanic_view">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tip" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.mecanic_nereparate" Member="mecanic_nereparates">
+    <Type Name="mecanic_nereparate">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="tip" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.adauga_mecanic" Method="adauga_mecanic">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="telefon" Type="System.String" DbType="NChar(13)" />
+    <Parameter Name="data_angajarii" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="director" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.vezi_vanzare" Method="vezi_vanzare">
+    <ElementType Name="vezi_vanzareResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_angajat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_nume_piesa" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier_piesa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.adauga_vanzator" Method="adauga_vanzator">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="data_angajarii" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="salariu" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="director" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_Brevet" Method="Add_Brevet">
+    <Parameter Name="fk_masina" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="descriere" Type="System.String" DbType="NChar(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_Client" Method="Add_Client">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(80)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(80)" />
+    <Parameter Name="telefon" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="nrcard" Type="System.String" DbType="NChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_fabricant" Method="Add_fabricant">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="nr_telefon" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_operatie_withoutp" Method="add_operatie_withoutp">
+    <Parameter Name="idrepair" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fk_mec" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descrier" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_operatie_withp" Method="add_operatie_withp">
+    <Parameter Name="idrepair" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fk_mec" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descrier" Type="System.String" DbType="NVarChar(40)" />
+    <Parameter Name="fk_piesa" Type="System.String" DbType="NVarChar(90)" />
+    <Parameter Name="fk_supplier" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_password_" Method="add_password_">
+    <Parameter Name="password" Type="System.String" DbType="NChar(40)" />
+    <Parameter Name="nume" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_password_dir_tehnic" Method="add_password_dir_tehnic">
+    <Parameter Name="password" Type="System.String" DbType="NChar(40)" />
+    <Parameter Name="nume" Type="System.String" DbType="NChar(130)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(130)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_password_mecanic" Method="add_password_mecanic">
+    <Parameter Name="password" Type="System.String" DbType="NChar(40)" />
+    <Parameter Name="nume" Type="System.String" DbType="NChar(40)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_piese" Method="add_piese">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="cantitate" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fk_sup" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_reparatie" Method="add_reparatie">
+    <Parameter Name="vin" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="descriere" Type="System.String" DbType="NVarChar(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_supplier" Method="add_supplier">
+    <Parameter Name="nume" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="telefon" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_tipmasina" Method="Add_tipmasina">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_Vanzare" Method="Add_Vanzare">
+    <Parameter Name="angajat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="proprietar" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nume_piesa" Type="System.String" DbType="NChar(80)" />
+    <Parameter Name="amount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fk_supplier" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cauta_client" Method="cauta_client">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="cauta_clientResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nrcard" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cauta_dupa_nume" Method="cauta_dupa_nume">
+    <Parameter Name="nume" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="prenume" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="cauta_dupa_numeResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nrcard" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fk_tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_brand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="id2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume2" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nr_telefon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.delete_fabricant" Method="delete_fabricant">
+    <Parameter Name="nume" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="delete_fabricantResult">
+      <Column Name="v1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.delete_supplier" Method="delete_supplier">
+    <Parameter Name="nume" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="delete_supplierResult">
+      <Column Name="v1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fabricant_dupasupplier" Method="fabricant_dupasupplier">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(40)" />
+    <ElementType Name="fabricant_dupasupplierResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Masini_Nereparate" Method="Masini_Nereparate">
+    <ElementType Name="Masini_NereparateResult">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fk_tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_brand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.monit_mecanic" Method="monit_mecanic">
+    <ElementType Name="monit_mecanicResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="data_angajare" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fk_director" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_reparatie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descriere" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="fk_piesa" Type="System.String" DbType="NChar(90)" CanBeNull="true" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_masina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descriere1" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.monit_vanzator" Method="monit_vanzator">
+    <ElementType Name="monit_vanzatorResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="data_angajarii" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="salariu" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="fk_director_tehnic" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parola" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_angajat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_nume_piesa" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier_piesa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.operatii_reparatii" Method="operatii_reparatii">
+    <ElementType Name="operatii_reparatiiResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_masina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descriere" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_reparatie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descriere1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="fk_piesa" Type="System.String" DbType="NChar(90)" CanBeNull="true" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.piese_nume" Method="piese_nume">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(90)" />
+    <ElementType Name="piese_numeResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.piese_supplier" Method="piese_supplier">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(90)" />
+    <ElementType Name="piese_supplierResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.piese_vandute" Method="piese_vandute">
+    <ElementType Name="piese_vanduteResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_piese_nume" Method="search_piese_nume">
+    <Parameter Name="nume" Type="System.String" DbType="VarChar(90)" />
+    <ElementType Name="search_piese_numeResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.searchvin" Method="searchvin">
+    <Parameter Name="vin" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="searchvinResult">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fk_tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_brand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nrcard" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="id2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume2" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nr_telefon" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stergi_dispozitiv" Method="stergi_dispozitiv">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stergi_fabricant" Method="stergi_fabricant">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stergi_mecanic" Method="stergi_mecanic">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stergi_piesa" Method="stergi_piesa">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(90)" />
+    <Parameter Name="idsupplier" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stergi_proprietar" Method="stergi_proprietar">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(90)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NVarChar(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stergi_supplier" Method="stergi_supplier">
+    <Parameter Name="nume" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Stocul_pieselor" Method="Stocul_pieselor">
+    <ElementType Name="Stocul_pieselorResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.toate_masinile" Method="toate_masinile">
+    <ElementType Name="toate_masinileResult">
+      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="fk_tip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_brand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.toate_operatiile_masinii" Method="toate_operatiile_masinii">
+    <Parameter Name="vin" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="toate_operatiile_masiniiResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_reparatie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_mecanic" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descriere" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="fk_piesa" Type="System.String" DbType="NChar(90)" CanBeNull="true" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_masina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descriere1" Type="System.String" DbType="NChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.addtipbrevet" Method="addtipbrevet">
+    <Parameter Name="tip" Type="System.String" DbType="NChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.search_piese_disponibile" Method="search_piese_disponibile">
+    <ElementType Name="search_piese_disponibileResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cauta_piese_dupa_clienti" Method="cauta_piese_dupa_clienti">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(40)" />
+    <Parameter Name="prenume" Type="System.String" DbType="NChar(40)" />
+    <ElementType Name="cauta_piese_dupa_clientiResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_angajat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_proprietar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_nume_piesa" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier_piesa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="prenume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nrcard" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cauta_piese_dupa_nume" Method="cauta_piese_dupa_nume">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(40)" />
+    <ElementType Name="cauta_piese_dupa_numeResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.cauta_piese_dupa_furnizor" Method="cauta_piese_dupa_furnizor">
+    <Parameter Name="nume" Type="System.String" DbType="NChar(40)" />
+    <ElementType Name="cauta_piese_dupa_furnizorResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="cantitate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nume1" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.toate_piesele_vandute" Method="toate_piesele_vandute">
+    <ElementType Name="toate_piesele_vanduteResult">
+      <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

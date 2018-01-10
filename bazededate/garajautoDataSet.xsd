@@ -1,0 +1,1551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="garajautoDataSet" targetNamespace="http://tempuri.org/garajautoDataSet.xsd" xmlns:mstns="http://tempuri.org/garajautoDataSet.xsd" xmlns="http://tempuri.org/garajautoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="garajautoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="garajautoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.bazededate.Properties.Settings.GlobalReference.Default.garajautoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mecanic_nereparateTableAdapter" GeneratorDataComponentClassName="mecanic_nereparateTableAdapter" Name="mecanic_nereparate" UserDataComponentName="mecanic_nereparateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.mecanic_nereparate" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT vin, tip, culoare, brand, nume, telefon FROM dbo.mecanic_nereparate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="vin" DataSetColumn="vin" />
+              <Mapping SourceColumn="tip" DataSetColumn="tip" />
+              <Mapping SourceColumn="culoare" DataSetColumn="culoare" />
+              <Mapping SourceColumn="brand" DataSetColumn="brand" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="telefon" DataSetColumn="telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mecanic_viewTableAdapter" GeneratorDataComponentClassName="mecanic_viewTableAdapter" Name="mecanic_view" UserDataComponentName="mecanic_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.mecanic_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT vin, tip, culoare, brand, nume, telefon FROM dbo.mecanic_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="vin" DataSetColumn="vin" />
+              <Mapping SourceColumn="tip" DataSetColumn="tip" />
+              <Mapping SourceColumn="culoare" DataSetColumn="culoare" />
+              <Mapping SourceColumn="brand" DataSetColumn="brand" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="telefon" DataSetColumn="telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vanzatorTableAdapter" GeneratorDataComponentClassName="vanzatorTableAdapter" Name="vanzator" UserDataComponentName="vanzatorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.vanzator" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[vanzator] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([data_angajarii] = @Original_data_angajarii) AND ([salariu] = @Original_salariu) AND ((@IsNull_fk_director_tehnic = 1 AND [fk_director_tehnic] IS NULL) OR ([fk_director_tehnic] = @Original_fk_director_tehnic)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_salariu" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[vanzator] ([nume], [prenume], [data_angajarii], [salariu], [fk_director_tehnic]) VALUES (@nume, @prenume, @data_angajarii, @salariu, @fk_director_tehnic);
+SELECT id, nume, prenume, data_angajarii, salariu, fk_director_tehnic FROM vanzator WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@salariu" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, prenume, data_angajarii, salariu, fk_director_tehnic FROM dbo.vanzator</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[vanzator] SET [nume] = @nume, [prenume] = @prenume, [data_angajarii] = @data_angajarii, [salariu] = @salariu, [fk_director_tehnic] = @fk_director_tehnic WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([data_angajarii] = @Original_data_angajarii) AND ([salariu] = @Original_salariu) AND ((@IsNull_fk_director_tehnic = 1 AND [fk_director_tehnic] IS NULL) OR ([fk_director_tehnic] = @Original_fk_director_tehnic)));
+SELECT id, nume, prenume, data_angajarii, salariu, fk_director_tehnic FROM vanzator WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@salariu" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_salariu" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_director_tehnic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director_tehnic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="prenume" DataSetColumn="prenume" />
+              <Mapping SourceColumn="data_angajarii" DataSetColumn="data_angajarii" />
+              <Mapping SourceColumn="salariu" DataSetColumn="salariu" />
+              <Mapping SourceColumn="fk_director_tehnic" DataSetColumn="fk_director_tehnic" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="brevet_dispozitivTableAdapter" GeneratorDataComponentClassName="brevet_dispozitivTableAdapter" Name="brevet_dispozitiv" UserDataComponentName="brevet_dispozitivTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.brevet_dispozitiv" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[brevet_dispozitiv] WHERE (([id] = @Original_id) AND ([fk_mecanic] = @Original_fk_mecanic) AND ([tipbrevet] = @Original_tipbrevet))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tipbrevet" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipbrevet" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[brevet_dispozitiv] ([fk_mecanic], [tipbrevet]) VALUES (@fk_mecanic, @tipbrevet);
+SELECT id, fk_mecanic, tipbrevet FROM brevet_dispozitiv WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tipbrevet" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipbrevet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fk_mecanic, tipbrevet FROM dbo.brevet_dispozitiv</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[brevet_dispozitiv] SET [fk_mecanic] = @fk_mecanic, [tipbrevet] = @tipbrevet WHERE (([id] = @Original_id) AND ([fk_mecanic] = @Original_fk_mecanic) AND ([tipbrevet] = @Original_tipbrevet));
+SELECT id, fk_mecanic, tipbrevet FROM brevet_dispozitiv WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tipbrevet" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipbrevet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tipbrevet" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipbrevet" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fk_mecanic" DataSetColumn="fk_mecanic" />
+              <Mapping SourceColumn="tipbrevet" DataSetColumn="tipbrevet" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="director_tehnicTableAdapter" GeneratorDataComponentClassName="director_tehnicTableAdapter" Name="director_tehnic" UserDataComponentName="director_tehnicTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.director_tehnic" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[director_tehnic] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([salariu] = @Original_salariu) AND ([data_angajarii] = @Original_data_angajarii))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_salariu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[director_tehnic] ([nume], [prenume], [salariu], [data_angajarii]) VALUES (@nume, @prenume, @salariu, @data_angajarii);
+SELECT id, nume, prenume, salariu, data_angajarii FROM director_tehnic WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@salariu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, prenume, salariu, data_angajarii FROM dbo.director_tehnic</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[director_tehnic] SET [nume] = @nume, [prenume] = @prenume, [salariu] = @salariu, [data_angajarii] = @data_angajarii WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([salariu] = @Original_salariu) AND ([data_angajarii] = @Original_data_angajarii));
+SELECT id, nume, prenume, salariu, data_angajarii FROM director_tehnic WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@salariu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_salariu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="salariu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajarii" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajarii" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="prenume" DataSetColumn="prenume" />
+              <Mapping SourceColumn="salariu" DataSetColumn="salariu" />
+              <Mapping SourceColumn="data_angajarii" DataSetColumn="data_angajarii" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dispozitivTableAdapter" GeneratorDataComponentClassName="dispozitivTableAdapter" Name="dispozitiv" UserDataComponentName="dispozitivTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.dispozitiv" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[dispozitiv] WHERE (([id] = @Original_id) AND ([brevet_necesar] = @Original_brevet_necesar) AND ([nume] = @Original_nume))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_brevet_necesar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="brevet_necesar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[dispozitiv] ([brevet_necesar], [nume]) VALUES (@brevet_necesar, @nume);
+SELECT id, brevet_necesar, nume FROM dispozitiv WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@brevet_necesar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="brevet_necesar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, brevet_necesar, nume FROM dbo.dispozitiv</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[dispozitiv] SET [brevet_necesar] = @brevet_necesar, [nume] = @nume WHERE (([id] = @Original_id) AND ([brevet_necesar] = @Original_brevet_necesar) AND ([nume] = @Original_nume));
+SELECT id, brevet_necesar, nume FROM dispozitiv WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@brevet_necesar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="brevet_necesar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_brevet_necesar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="brevet_necesar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="brevet_necesar" DataSetColumn="brevet_necesar" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="fabricantTableAdapter" GeneratorDataComponentClassName="fabricantTableAdapter" Name="fabricant" UserDataComponentName="fabricantTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.fabricant" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[fabricant] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ((@IsNull_nr_telefon = 1 AND [nr_telefon] IS NULL) OR ([nr_telefon] = @Original_nr_telefon)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nr_telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nr_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[fabricant] ([nume], [nr_telefon]) VALUES (@nume, @nr_telefon);
+SELECT id, nume, nr_telefon FROM fabricant WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nr_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, nr_telefon FROM dbo.fabricant</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[fabricant] SET [nume] = @nume, [nr_telefon] = @nr_telefon WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ((@IsNull_nr_telefon = 1 AND [nr_telefon] IS NULL) OR ([nr_telefon] = @Original_nr_telefon)));
+SELECT id, nume, nr_telefon FROM fabricant WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nr_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nr_telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nr_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nr_telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="nr_telefon" DataSetColumn="nr_telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="masinaTableAdapter" GeneratorDataComponentClassName="masinaTableAdapter" Name="masina" UserDataComponentName="masinaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.masina" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[masina] WHERE (([vin] = @Original_vin) AND ((@IsNull_culoare = 1 AND [culoare] IS NULL) OR ([culoare] = @Original_culoare)) AND ([fk_tip] = @Original_fk_tip) AND ([fk_brand] = @Original_fk_brand) AND ([fk_proprietar] = @Original_fk_proprietar))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_vin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="vin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_culoare" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_culoare" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_tip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_brand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_brand" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[masina] ([vin], [culoare], [fk_tip], [fk_brand], [fk_proprietar]) VALUES (@vin, @culoare, @fk_tip, @fk_brand, @fk_proprietar);
+SELECT vin, culoare, fk_tip, fk_brand, fk_proprietar FROM masina WHERE (vin = @vin)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@vin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="vin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@culoare" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_tip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_brand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_brand" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT vin, culoare, fk_tip, fk_brand, fk_proprietar FROM dbo.masina</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[masina] SET [vin] = @vin, [culoare] = @culoare, [fk_tip] = @fk_tip, [fk_brand] = @fk_brand, [fk_proprietar] = @fk_proprietar WHERE (([vin] = @Original_vin) AND ((@IsNull_culoare = 1 AND [culoare] IS NULL) OR ([culoare] = @Original_culoare)) AND ([fk_tip] = @Original_fk_tip) AND ([fk_brand] = @Original_fk_brand) AND ([fk_proprietar] = @Original_fk_proprietar));
+SELECT vin, culoare, fk_tip, fk_brand, fk_proprietar FROM masina WHERE (vin = @vin)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@vin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="vin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@culoare" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_tip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_brand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_brand" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_vin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="vin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_culoare" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_culoare" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="culoare" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_tip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_brand" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_brand" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="vin" DataSetColumn="vin" />
+              <Mapping SourceColumn="culoare" DataSetColumn="culoare" />
+              <Mapping SourceColumn="fk_tip" DataSetColumn="fk_tip" />
+              <Mapping SourceColumn="fk_brand" DataSetColumn="fk_brand" />
+              <Mapping SourceColumn="fk_proprietar" DataSetColumn="fk_proprietar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="mecanicTableAdapter" GeneratorDataComponentClassName="mecanicTableAdapter" Name="mecanic" UserDataComponentName="mecanicTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.mecanic" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[mecanic] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([telefon] = @Original_telefon) AND ([data_angajare] = @Original_data_angajare) AND ((@IsNull_fk_director = 1 AND [fk_director] IS NULL) OR ([fk_director] = @Original_fk_director)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajare" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajare" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[mecanic] ([nume], [prenume], [telefon], [data_angajare], [fk_director]) VALUES (@nume, @prenume, @telefon, @data_angajare, @fk_director);
+SELECT id, nume, prenume, telefon, data_angajare, fk_director FROM mecanic WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajare" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajare" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, prenume, telefon, data_angajare, fk_director FROM dbo.mecanic</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[mecanic] SET [nume] = @nume, [prenume] = @prenume, [telefon] = @telefon, [data_angajare] = @data_angajare, [fk_director] = @fk_director WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([telefon] = @Original_telefon) AND ([data_angajare] = @Original_data_angajare) AND ((@IsNull_fk_director = 1 AND [fk_director] IS NULL) OR ([fk_director] = @Original_fk_director)));
+SELECT id, nume, prenume, telefon, data_angajare, fk_director FROM mecanic WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data_angajare" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajare" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data_angajare" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data_angajare" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_director" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_director" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="prenume" DataSetColumn="prenume" />
+              <Mapping SourceColumn="telefon" DataSetColumn="telefon" />
+              <Mapping SourceColumn="data_angajare" DataSetColumn="data_angajare" />
+              <Mapping SourceColumn="fk_director" DataSetColumn="fk_director" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="operatieTableAdapter" GeneratorDataComponentClassName="operatieTableAdapter" Name="operatie" UserDataComponentName="operatieTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.operatie" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[operatie] WHERE (([id] = @Original_id) AND ([fk_reparatie] = @Original_fk_reparatie) AND ([fk_mecanic] = @Original_fk_mecanic) AND ((@IsNull_descriere = 1 AND [descriere] IS NULL) OR ([descriere] = @Original_descriere)) AND ((@IsNull_fk_piesa = 1 AND [fk_piesa] IS NULL) OR ([fk_piesa] = @Original_fk_piesa)) AND ((@IsNull_fk_supplier = 1 AND [fk_supplier] IS NULL) OR ([fk_supplier] = @Original_fk_supplier)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_reparatie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_reparatie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descriere" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_fk_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[operatie] ([fk_reparatie], [fk_mecanic], [descriere], [fk_piesa], [fk_supplier]) VALUES (@fk_reparatie, @fk_mecanic, @descriere, @fk_piesa, @fk_supplier);
+SELECT id, fk_reparatie, fk_mecanic, descriere, fk_piesa, fk_supplier FROM operatie WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_reparatie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_reparatie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@fk_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fk_reparatie, fk_mecanic, descriere, fk_piesa, fk_supplier FROM dbo.operatie</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[operatie] SET [fk_reparatie] = @fk_reparatie, [fk_mecanic] = @fk_mecanic, [descriere] = @descriere, [fk_piesa] = @fk_piesa, [fk_supplier] = @fk_supplier WHERE (([id] = @Original_id) AND ([fk_reparatie] = @Original_fk_reparatie) AND ([fk_mecanic] = @Original_fk_mecanic) AND ((@IsNull_descriere = 1 AND [descriere] IS NULL) OR ([descriere] = @Original_descriere)) AND ((@IsNull_fk_piesa = 1 AND [fk_piesa] IS NULL) OR ([fk_piesa] = @Original_fk_piesa)) AND ((@IsNull_fk_supplier = 1 AND [fk_supplier] IS NULL) OR ([fk_supplier] = @Original_fk_supplier)));
+SELECT id, fk_reparatie, fk_mecanic, descriere, fk_piesa, fk_supplier FROM operatie WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_reparatie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_reparatie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@fk_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_reparatie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_reparatie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descriere" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_fk_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fk_reparatie" DataSetColumn="fk_reparatie" />
+              <Mapping SourceColumn="fk_mecanic" DataSetColumn="fk_mecanic" />
+              <Mapping SourceColumn="descriere" DataSetColumn="descriere" />
+              <Mapping SourceColumn="fk_piesa" DataSetColumn="fk_piesa" />
+              <Mapping SourceColumn="fk_supplier" DataSetColumn="fk_supplier" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="piesaTableAdapter" GeneratorDataComponentClassName="piesaTableAdapter" Name="piesa" UserDataComponentName="piesaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.piesa" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[piesa] WHERE (([nume] = @Original_nume) AND ([cantitate] = @Original_cantitate) AND ([fk_supplier] = @Original_fk_supplier))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_cantitate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantitate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[piesa] ([nume], [cantitate], [fk_supplier]) VALUES (@nume, @cantitate, @fk_supplier);
+SELECT nume, cantitate, fk_supplier FROM piesa WHERE (fk_supplier = @fk_supplier) AND (nume = @nume)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@cantitate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantitate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nume, cantitate, fk_supplier FROM dbo.piesa</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[piesa] SET [nume] = @nume, [cantitate] = @cantitate, [fk_supplier] = @fk_supplier WHERE (([nume] = @Original_nume) AND ([cantitate] = @Original_cantitate) AND ([fk_supplier] = @Original_fk_supplier));
+SELECT nume, cantitate, fk_supplier FROM piesa WHERE (fk_supplier = @fk_supplier) AND (nume = @nume)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@cantitate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantitate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_cantitate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cantitate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="cantitate" DataSetColumn="cantitate" />
+              <Mapping SourceColumn="fk_supplier" DataSetColumn="fk_supplier" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="proprietarTableAdapter" GeneratorDataComponentClassName="proprietarTableAdapter" Name="proprietar" UserDataComponentName="proprietarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.proprietar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[proprietar] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([telefon] = @Original_telefon) AND ((@IsNull_nrcard = 1 AND [nrcard] IS NULL) OR ([nrcard] = @Original_nrcard)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nrcard" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nrcard" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[proprietar] ([nume], [prenume], [telefon], [nrcard]) VALUES (@nume, @prenume, @telefon, @nrcard);
+SELECT id, nume, prenume, telefon, nrcard FROM proprietar WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nrcard" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, prenume, telefon, nrcard FROM dbo.proprietar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[proprietar] SET [nume] = @nume, [prenume] = @prenume, [telefon] = @telefon, [nrcard] = @nrcard WHERE (([id] = @Original_id) AND ([nume] = @Original_nume) AND ([prenume] = @Original_prenume) AND ([telefon] = @Original_telefon) AND ((@IsNull_nrcard = 1 AND [nrcard] IS NULL) OR ([nrcard] = @Original_nrcard)));
+SELECT id, nume, prenume, telefon, nrcard FROM proprietar WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nrcard" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_prenume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="prenume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nrcard" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nrcard" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nrcard" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="prenume" DataSetColumn="prenume" />
+              <Mapping SourceColumn="telefon" DataSetColumn="telefon" />
+              <Mapping SourceColumn="nrcard" DataSetColumn="nrcard" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="reparatieTableAdapter" GeneratorDataComponentClassName="reparatieTableAdapter" Name="reparatie" UserDataComponentName="reparatieTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.reparatie" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[reparatie] WHERE (([id] = @Original_id) AND ([fk_masina] = @Original_fk_masina) AND ((@IsNull_descriere = 1 AND [descriere] IS NULL) OR ([descriere] = @Original_descriere)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fk_masina" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fk_masina" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descriere" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[reparatie] ([fk_masina], [descriere]) VALUES (@fk_masina, @descriere);
+SELECT id, fk_masina, descriere FROM reparatie WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fk_masina" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fk_masina" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fk_masina, descriere FROM dbo.reparatie</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[reparatie] SET [fk_masina] = @fk_masina, [descriere] = @descriere WHERE (([id] = @Original_id) AND ([fk_masina] = @Original_fk_masina) AND ((@IsNull_descriere = 1 AND [descriere] IS NULL) OR ([descriere] = @Original_descriere)));
+SELECT id, fk_masina, descriere FROM reparatie WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@fk_masina" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fk_masina" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_fk_masina" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="fk_masina" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descriere" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_descriere" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="descriere" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fk_masina" DataSetColumn="fk_masina" />
+              <Mapping SourceColumn="descriere" DataSetColumn="descriere" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="supplierTableAdapter" GeneratorDataComponentClassName="supplierTableAdapter" Name="supplier" UserDataComponentName="supplierTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.supplier" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[supplier] WHERE (([id] = @Original_id) AND ((@IsNull_nume = 1 AND [nume] IS NULL) OR ([nume] = @Original_nume)) AND ((@IsNull_telefon = 1 AND [telefon] IS NULL) OR ([telefon] = @Original_telefon)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nume" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[supplier] ([nume], [telefon]) VALUES (@nume, @telefon);
+SELECT id, nume, telefon FROM supplier WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume, telefon FROM dbo.supplier</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[supplier] SET [nume] = @nume, [telefon] = @telefon WHERE (([id] = @Original_id) AND ((@IsNull_nume = 1 AND [nume] IS NULL) OR ([nume] = @Original_nume)) AND ((@IsNull_telefon = 1 AND [telefon] IS NULL) OR ([telefon] = @Original_telefon)));
+SELECT id, nume, telefon FROM supplier WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nume" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_telefon" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+              <Mapping SourceColumn="telefon" DataSetColumn="telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tipTableAdapter" GeneratorDataComponentClassName="tipTableAdapter" Name="tip" UserDataComponentName="tipTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.tip" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[tip] WHERE (([id] = @Original_id) AND ([nume] = @Original_nume))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[tip] ([nume]) VALUES (@nume);
+SELECT id, nume FROM tip WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, nume FROM dbo.tip</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[tip] SET [nume] = @nume WHERE (([id] = @Original_id) AND ([nume] = @Original_nume));
+SELECT id, nume FROM tip WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_nume" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="nume" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nume" DataSetColumn="nume" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tip_brevetTableAdapter" GeneratorDataComponentClassName="tip_brevetTableAdapter" Name="tip_brevet" UserDataComponentName="tip_brevetTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.tip_brevet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[tip_brevet] WHERE (([id] = @Original_id) AND ((@IsNull_tip = 1 AND [tip] IS NULL) OR ([tip] = @Original_tip)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_tip" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[tip_brevet] ([tip]) VALUES (@tip);
+SELECT id, tip FROM tip_brevet WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@tip" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, tip FROM dbo.tip_brevet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[tip_brevet] SET [tip] = @tip WHERE (([id] = @Original_id) AND ((@IsNull_tip = 1 AND [tip] IS NULL) OR ([tip] = @Original_tip)));
+SELECT id, tip FROM tip_brevet WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@tip" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tip" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_tip" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="tip" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="tip" DataSetColumn="tip" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="utilizare_dispozitivTableAdapter" GeneratorDataComponentClassName="utilizare_dispozitivTableAdapter" Name="utilizare_dispozitiv" UserDataComponentName="utilizare_dispozitivTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.utilizare_dispozitiv" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[utilizare_dispozitiv] WHERE (([id] = @Original_id) AND ([fk_mecanic] = @Original_fk_mecanic) AND ([fk_dispozitiv] = @Original_fk_dispozitiv) AND ([data] = @Original_data))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_dispozitiv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_dispozitiv" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[utilizare_dispozitiv] ([fk_mecanic], [fk_dispozitiv], [data]) VALUES (@fk_mecanic, @fk_dispozitiv, @data);
+SELECT id, fk_mecanic, fk_dispozitiv, data FROM utilizare_dispozitiv WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_dispozitiv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_dispozitiv" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fk_mecanic, fk_dispozitiv, data FROM dbo.utilizare_dispozitiv</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[utilizare_dispozitiv] SET [fk_mecanic] = @fk_mecanic, [fk_dispozitiv] = @fk_dispozitiv, [data] = @data WHERE (([id] = @Original_id) AND ([fk_mecanic] = @Original_fk_mecanic) AND ([fk_dispozitiv] = @Original_fk_dispozitiv) AND ([data] = @Original_data));
+SELECT id, fk_mecanic, fk_dispozitiv, data FROM utilizare_dispozitiv WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_dispozitiv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_dispozitiv" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_mecanic" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_mecanic" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_dispozitiv" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_dispozitiv" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_data" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="data" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fk_mecanic" DataSetColumn="fk_mecanic" />
+              <Mapping SourceColumn="fk_dispozitiv" DataSetColumn="fk_dispozitiv" />
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vanzareTableAdapter" GeneratorDataComponentClassName="vanzareTableAdapter" Name="vanzare" UserDataComponentName="vanzareTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.vanzare" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[vanzare] WHERE (([id] = @Original_id) AND ([fk_angajat] = @Original_fk_angajat) AND ([fk_proprietar] = @Original_fk_proprietar) AND ([fk_nume_piesa] = @Original_fk_nume_piesa) AND ([amount] = @Original_amount) AND ([fk_supplier_piesa] = @Original_fk_supplier_piesa))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_angajat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_angajat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_fk_nume_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_nume_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[vanzare] ([fk_angajat], [fk_proprietar], [fk_nume_piesa], [amount], [fk_supplier_piesa]) VALUES (@fk_angajat, @fk_proprietar, @fk_nume_piesa, @amount, @fk_supplier_piesa);
+SELECT id, fk_angajat, fk_proprietar, fk_nume_piesa, amount, fk_supplier_piesa FROM vanzare WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_angajat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_angajat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@fk_nume_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_nume_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, fk_angajat, fk_proprietar, fk_nume_piesa, amount, fk_supplier_piesa FROM dbo.vanzare</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[vanzare] SET [fk_angajat] = @fk_angajat, [fk_proprietar] = @fk_proprietar, [fk_nume_piesa] = @fk_nume_piesa, [amount] = @amount, [fk_supplier_piesa] = @fk_supplier_piesa WHERE (([id] = @Original_id) AND ([fk_angajat] = @Original_fk_angajat) AND ([fk_proprietar] = @Original_fk_proprietar) AND ([fk_nume_piesa] = @Original_fk_nume_piesa) AND ([amount] = @Original_amount) AND ([fk_supplier_piesa] = @Original_fk_supplier_piesa));
+SELECT id, fk_angajat, fk_proprietar, fk_nume_piesa, amount, fk_supplier_piesa FROM vanzare WHERE (id = @id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_angajat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_angajat" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@fk_nume_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_nume_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@fk_supplier_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier_piesa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_angajat" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_angajat" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_proprietar" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_proprietar" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_fk_nume_piesa" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="fk_nume_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_amount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_fk_supplier_piesa" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fk_supplier_piesa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fk_angajat" DataSetColumn="fk_angajat" />
+              <Mapping SourceColumn="fk_proprietar" DataSetColumn="fk_proprietar" />
+              <Mapping SourceColumn="fk_nume_piesa" DataSetColumn="fk_nume_piesa" />
+              <Mapping SourceColumn="amount" DataSetColumn="amount" />
+              <Mapping SourceColumn="fk_supplier_piesa" DataSetColumn="fk_supplier_piesa" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Table_1TableAdapter" GeneratorDataComponentClassName="Table_1TableAdapter" Name="Table_1" UserDataComponentName="Table_1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="garajautoConnectionString (Settings)" DbObjectName="garajauto.dbo.Table_1" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Table_1] ([sdd]) VALUES (@sdd)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@sdd" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="sdd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT sdd FROM dbo.Table_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sdd" DataSetColumn="sdd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="garajautoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="garajautoDataSet" msprop:Generator_UserDSName="garajautoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="mecanic_nereparate" msprop:Generator_TableClassName="mecanic_nereparateDataTable" msprop:Generator_TableVarName="tablemecanic_nereparate" msprop:Generator_RowChangedName="mecanic_nereparateRowChanged" msprop:Generator_TablePropName="mecanic_nereparate" msprop:Generator_RowDeletingName="mecanic_nereparateRowDeleting" msprop:Generator_RowChangingName="mecanic_nereparateRowChanging" msprop:Generator_RowEvHandlerName="mecanic_nereparateRowChangeEventHandler" msprop:Generator_RowDeletedName="mecanic_nereparateRowDeleted" msprop:Generator_RowClassName="mecanic_nereparateRow" msprop:Generator_UserTableName="mecanic_nereparate" msprop:Generator_RowEvArgName="mecanic_nereparateRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vin" msprop:Generator_ColumnVarNameInTable="columnvin" msprop:Generator_ColumnPropNameInRow="vin" msprop:Generator_ColumnPropNameInTable="vinColumn" msprop:Generator_UserColumnName="vin">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tip" msprop:Generator_ColumnVarNameInTable="columntip" msprop:Generator_ColumnPropNameInRow="tip" msprop:Generator_ColumnPropNameInTable="tipColumn" msprop:Generator_UserColumnName="tip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="culoare" msprop:Generator_ColumnVarNameInTable="columnculoare" msprop:Generator_ColumnPropNameInRow="culoare" msprop:Generator_ColumnPropNameInTable="culoareColumn" msprop:Generator_UserColumnName="culoare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="brand" msprop:Generator_ColumnVarNameInTable="columnbrand" msprop:Generator_ColumnPropNameInRow="brand" msprop:Generator_ColumnPropNameInTable="brandColumn" msprop:Generator_UserColumnName="brand">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mecanic_view" msprop:Generator_TableClassName="mecanic_viewDataTable" msprop:Generator_TableVarName="tablemecanic_view" msprop:Generator_RowChangedName="mecanic_viewRowChanged" msprop:Generator_TablePropName="mecanic_view" msprop:Generator_RowDeletingName="mecanic_viewRowDeleting" msprop:Generator_RowChangingName="mecanic_viewRowChanging" msprop:Generator_RowEvHandlerName="mecanic_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="mecanic_viewRowDeleted" msprop:Generator_RowClassName="mecanic_viewRow" msprop:Generator_UserTableName="mecanic_view" msprop:Generator_RowEvArgName="mecanic_viewRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vin" msprop:Generator_ColumnVarNameInTable="columnvin" msprop:Generator_ColumnPropNameInRow="vin" msprop:Generator_ColumnPropNameInTable="vinColumn" msprop:Generator_UserColumnName="vin">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tip" msprop:Generator_ColumnVarNameInTable="columntip" msprop:Generator_ColumnPropNameInRow="tip" msprop:Generator_ColumnPropNameInTable="tipColumn" msprop:Generator_UserColumnName="tip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="culoare" msprop:Generator_ColumnVarNameInTable="columnculoare" msprop:Generator_ColumnPropNameInRow="culoare" msprop:Generator_ColumnPropNameInTable="culoareColumn" msprop:Generator_UserColumnName="culoare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="brand" msprop:Generator_ColumnVarNameInTable="columnbrand" msprop:Generator_ColumnPropNameInRow="brand" msprop:Generator_ColumnPropNameInTable="brandColumn" msprop:Generator_UserColumnName="brand">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vanzator" msprop:Generator_TableClassName="vanzatorDataTable" msprop:Generator_TableVarName="tablevanzator" msprop:Generator_RowChangedName="vanzatorRowChanged" msprop:Generator_TablePropName="vanzator" msprop:Generator_RowDeletingName="vanzatorRowDeleting" msprop:Generator_RowChangingName="vanzatorRowChanging" msprop:Generator_RowEvHandlerName="vanzatorRowChangeEventHandler" msprop:Generator_RowDeletedName="vanzatorRowDeleted" msprop:Generator_RowClassName="vanzatorRow" msprop:Generator_UserTableName="vanzator" msprop:Generator_RowEvArgName="vanzatorRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenume" msprop:Generator_ColumnVarNameInTable="columnprenume" msprop:Generator_ColumnPropNameInRow="prenume" msprop:Generator_ColumnPropNameInTable="prenumeColumn" msprop:Generator_UserColumnName="prenume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_angajarii" msprop:Generator_ColumnVarNameInTable="columndata_angajarii" msprop:Generator_ColumnPropNameInRow="data_angajarii" msprop:Generator_ColumnPropNameInTable="data_angajariiColumn" msprop:Generator_UserColumnName="data_angajarii" type="xs:dateTime" />
+              <xs:element name="salariu" msprop:Generator_ColumnVarNameInTable="columnsalariu" msprop:Generator_ColumnPropNameInRow="salariu" msprop:Generator_ColumnPropNameInTable="salariuColumn" msprop:Generator_UserColumnName="salariu" type="xs:decimal" />
+              <xs:element name="fk_director_tehnic" msprop:Generator_ColumnVarNameInTable="columnfk_director_tehnic" msprop:Generator_ColumnPropNameInRow="fk_director_tehnic" msprop:Generator_ColumnPropNameInTable="fk_director_tehnicColumn" msprop:Generator_UserColumnName="fk_director_tehnic" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="brevet_dispozitiv" msprop:Generator_TableClassName="brevet_dispozitivDataTable" msprop:Generator_TableVarName="tablebrevet_dispozitiv" msprop:Generator_RowChangedName="brevet_dispozitivRowChanged" msprop:Generator_TablePropName="brevet_dispozitiv" msprop:Generator_RowDeletingName="brevet_dispozitivRowDeleting" msprop:Generator_RowChangingName="brevet_dispozitivRowChanging" msprop:Generator_RowEvHandlerName="brevet_dispozitivRowChangeEventHandler" msprop:Generator_RowDeletedName="brevet_dispozitivRowDeleted" msprop:Generator_RowClassName="brevet_dispozitivRow" msprop:Generator_UserTableName="brevet_dispozitiv" msprop:Generator_RowEvArgName="brevet_dispozitivRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fk_mecanic" msprop:Generator_ColumnVarNameInTable="columnfk_mecanic" msprop:Generator_ColumnPropNameInRow="fk_mecanic" msprop:Generator_ColumnPropNameInTable="fk_mecanicColumn" msprop:Generator_UserColumnName="fk_mecanic" type="xs:int" />
+              <xs:element name="tipbrevet" msprop:Generator_ColumnVarNameInTable="columntipbrevet" msprop:Generator_ColumnPropNameInRow="tipbrevet" msprop:Generator_ColumnPropNameInTable="tipbrevetColumn" msprop:Generator_UserColumnName="tipbrevet" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="director_tehnic" msprop:Generator_TableClassName="director_tehnicDataTable" msprop:Generator_TableVarName="tabledirector_tehnic" msprop:Generator_RowChangedName="director_tehnicRowChanged" msprop:Generator_TablePropName="director_tehnic" msprop:Generator_RowDeletingName="director_tehnicRowDeleting" msprop:Generator_RowChangingName="director_tehnicRowChanging" msprop:Generator_RowEvHandlerName="director_tehnicRowChangeEventHandler" msprop:Generator_RowDeletedName="director_tehnicRowDeleted" msprop:Generator_RowClassName="director_tehnicRow" msprop:Generator_UserTableName="director_tehnic" msprop:Generator_RowEvArgName="director_tehnicRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="130" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenume" msprop:Generator_ColumnVarNameInTable="columnprenume" msprop:Generator_ColumnPropNameInRow="prenume" msprop:Generator_ColumnPropNameInTable="prenumeColumn" msprop:Generator_UserColumnName="prenume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="130" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salariu" msprop:Generator_ColumnVarNameInTable="columnsalariu" msprop:Generator_ColumnPropNameInRow="salariu" msprop:Generator_ColumnPropNameInTable="salariuColumn" msprop:Generator_UserColumnName="salariu" type="xs:int" />
+              <xs:element name="data_angajarii" msprop:Generator_ColumnVarNameInTable="columndata_angajarii" msprop:Generator_ColumnPropNameInRow="data_angajarii" msprop:Generator_ColumnPropNameInTable="data_angajariiColumn" msprop:Generator_UserColumnName="data_angajarii" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dispozitiv" msprop:Generator_TableClassName="dispozitivDataTable" msprop:Generator_TableVarName="tabledispozitiv" msprop:Generator_RowChangedName="dispozitivRowChanged" msprop:Generator_TablePropName="dispozitiv" msprop:Generator_RowDeletingName="dispozitivRowDeleting" msprop:Generator_RowChangingName="dispozitivRowChanging" msprop:Generator_RowEvHandlerName="dispozitivRowChangeEventHandler" msprop:Generator_RowDeletedName="dispozitivRowDeleted" msprop:Generator_RowClassName="dispozitivRow" msprop:Generator_UserTableName="dispozitiv" msprop:Generator_RowEvArgName="dispozitivRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="brevet_necesar" msprop:Generator_ColumnVarNameInTable="columnbrevet_necesar" msprop:Generator_ColumnPropNameInRow="brevet_necesar" msprop:Generator_ColumnPropNameInTable="brevet_necesarColumn" msprop:Generator_UserColumnName="brevet_necesar" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="fabricant" msprop:Generator_TableClassName="fabricantDataTable" msprop:Generator_TableVarName="tablefabricant" msprop:Generator_RowChangedName="fabricantRowChanged" msprop:Generator_TablePropName="fabricant" msprop:Generator_RowDeletingName="fabricantRowDeleting" msprop:Generator_RowChangingName="fabricantRowChanging" msprop:Generator_RowEvHandlerName="fabricantRowChangeEventHandler" msprop:Generator_RowDeletedName="fabricantRowDeleted" msprop:Generator_RowClassName="fabricantRow" msprop:Generator_UserTableName="fabricant" msprop:Generator_RowEvArgName="fabricantRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nr_telefon" msprop:Generator_ColumnVarNameInTable="columnnr_telefon" msprop:Generator_ColumnPropNameInRow="nr_telefon" msprop:Generator_ColumnPropNameInTable="nr_telefonColumn" msprop:Generator_UserColumnName="nr_telefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="masina" msprop:Generator_TableClassName="masinaDataTable" msprop:Generator_TableVarName="tablemasina" msprop:Generator_RowChangedName="masinaRowChanged" msprop:Generator_TablePropName="masina" msprop:Generator_RowDeletingName="masinaRowDeleting" msprop:Generator_RowChangingName="masinaRowChanging" msprop:Generator_RowEvHandlerName="masinaRowChangeEventHandler" msprop:Generator_RowDeletedName="masinaRowDeleted" msprop:Generator_RowClassName="masinaRow" msprop:Generator_UserTableName="masina" msprop:Generator_RowEvArgName="masinaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vin" msprop:Generator_ColumnVarNameInTable="columnvin" msprop:Generator_ColumnPropNameInRow="vin" msprop:Generator_ColumnPropNameInTable="vinColumn" msprop:Generator_UserColumnName="vin">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="culoare" msprop:Generator_ColumnVarNameInTable="columnculoare" msprop:Generator_ColumnPropNameInRow="culoare" msprop:Generator_ColumnPropNameInTable="culoareColumn" msprop:Generator_UserColumnName="culoare" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fk_tip" msprop:Generator_ColumnVarNameInTable="columnfk_tip" msprop:Generator_ColumnPropNameInRow="fk_tip" msprop:Generator_ColumnPropNameInTable="fk_tipColumn" msprop:Generator_UserColumnName="fk_tip" type="xs:int" />
+              <xs:element name="fk_brand" msprop:Generator_ColumnVarNameInTable="columnfk_brand" msprop:Generator_ColumnPropNameInRow="fk_brand" msprop:Generator_ColumnPropNameInTable="fk_brandColumn" msprop:Generator_UserColumnName="fk_brand" type="xs:int" />
+              <xs:element name="fk_proprietar" msprop:Generator_ColumnVarNameInTable="columnfk_proprietar" msprop:Generator_ColumnPropNameInRow="fk_proprietar" msprop:Generator_ColumnPropNameInTable="fk_proprietarColumn" msprop:Generator_UserColumnName="fk_proprietar" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mecanic" msprop:Generator_TableClassName="mecanicDataTable" msprop:Generator_TableVarName="tablemecanic" msprop:Generator_RowChangedName="mecanicRowChanged" msprop:Generator_TablePropName="mecanic" msprop:Generator_RowDeletingName="mecanicRowDeleting" msprop:Generator_RowChangingName="mecanicRowChanging" msprop:Generator_RowEvHandlerName="mecanicRowChangeEventHandler" msprop:Generator_RowDeletedName="mecanicRowDeleted" msprop:Generator_RowClassName="mecanicRow" msprop:Generator_UserTableName="mecanic" msprop:Generator_RowEvArgName="mecanicRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenume" msprop:Generator_ColumnVarNameInTable="columnprenume" msprop:Generator_ColumnPropNameInRow="prenume" msprop:Generator_ColumnPropNameInTable="prenumeColumn" msprop:Generator_UserColumnName="prenume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_angajare" msprop:Generator_ColumnVarNameInTable="columndata_angajare" msprop:Generator_ColumnPropNameInRow="data_angajare" msprop:Generator_ColumnPropNameInTable="data_angajareColumn" msprop:Generator_UserColumnName="data_angajare" type="xs:dateTime" />
+              <xs:element name="fk_director" msprop:Generator_ColumnVarNameInTable="columnfk_director" msprop:Generator_ColumnPropNameInRow="fk_director" msprop:Generator_ColumnPropNameInTable="fk_directorColumn" msprop:Generator_UserColumnName="fk_director" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="operatie" msprop:Generator_TableClassName="operatieDataTable" msprop:Generator_TableVarName="tableoperatie" msprop:Generator_RowChangedName="operatieRowChanged" msprop:Generator_TablePropName="operatie" msprop:Generator_RowDeletingName="operatieRowDeleting" msprop:Generator_RowChangingName="operatieRowChanging" msprop:Generator_RowEvHandlerName="operatieRowChangeEventHandler" msprop:Generator_RowDeletedName="operatieRowDeleted" msprop:Generator_RowClassName="operatieRow" msprop:Generator_UserTableName="operatie" msprop:Generator_RowEvArgName="operatieRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fk_reparatie" msprop:Generator_ColumnVarNameInTable="columnfk_reparatie" msprop:Generator_ColumnPropNameInRow="fk_reparatie" msprop:Generator_ColumnPropNameInTable="fk_reparatieColumn" msprop:Generator_UserColumnName="fk_reparatie" type="xs:int" />
+              <xs:element name="fk_mecanic" msprop:Generator_ColumnVarNameInTable="columnfk_mecanic" msprop:Generator_ColumnPropNameInRow="fk_mecanic" msprop:Generator_ColumnPropNameInTable="fk_mecanicColumn" msprop:Generator_UserColumnName="fk_mecanic" type="xs:int" />
+              <xs:element name="descriere" msprop:Generator_ColumnVarNameInTable="columndescriere" msprop:Generator_ColumnPropNameInRow="descriere" msprop:Generator_ColumnPropNameInTable="descriereColumn" msprop:Generator_UserColumnName="descriere" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fk_piesa" msprop:Generator_ColumnVarNameInTable="columnfk_piesa" msprop:Generator_ColumnPropNameInRow="fk_piesa" msprop:Generator_ColumnPropNameInTable="fk_piesaColumn" msprop:Generator_UserColumnName="fk_piesa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fk_supplier" msprop:Generator_ColumnVarNameInTable="columnfk_supplier" msprop:Generator_ColumnPropNameInRow="fk_supplier" msprop:Generator_ColumnPropNameInTable="fk_supplierColumn" msprop:Generator_UserColumnName="fk_supplier" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="piesa" msprop:Generator_TableClassName="piesaDataTable" msprop:Generator_TableVarName="tablepiesa" msprop:Generator_RowChangedName="piesaRowChanged" msprop:Generator_TablePropName="piesa" msprop:Generator_RowDeletingName="piesaRowDeleting" msprop:Generator_RowChangingName="piesaRowChanging" msprop:Generator_RowEvHandlerName="piesaRowChangeEventHandler" msprop:Generator_RowDeletedName="piesaRowDeleted" msprop:Generator_RowClassName="piesaRow" msprop:Generator_UserTableName="piesa" msprop:Generator_RowEvArgName="piesaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantitate" msprop:Generator_ColumnVarNameInTable="columncantitate" msprop:Generator_ColumnPropNameInRow="cantitate" msprop:Generator_ColumnPropNameInTable="cantitateColumn" msprop:Generator_UserColumnName="cantitate" type="xs:int" />
+              <xs:element name="fk_supplier" msprop:Generator_ColumnVarNameInTable="columnfk_supplier" msprop:Generator_ColumnPropNameInRow="fk_supplier" msprop:Generator_ColumnPropNameInTable="fk_supplierColumn" msprop:Generator_UserColumnName="fk_supplier" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="proprietar" msprop:Generator_TableClassName="proprietarDataTable" msprop:Generator_TableVarName="tableproprietar" msprop:Generator_RowChangedName="proprietarRowChanged" msprop:Generator_TablePropName="proprietar" msprop:Generator_RowDeletingName="proprietarRowDeleting" msprop:Generator_RowChangingName="proprietarRowChanging" msprop:Generator_RowEvHandlerName="proprietarRowChangeEventHandler" msprop:Generator_RowDeletedName="proprietarRowDeleted" msprop:Generator_RowClassName="proprietarRow" msprop:Generator_UserTableName="proprietar" msprop:Generator_RowEvArgName="proprietarRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenume" msprop:Generator_ColumnVarNameInTable="columnprenume" msprop:Generator_ColumnPropNameInRow="prenume" msprop:Generator_ColumnPropNameInTable="prenumeColumn" msprop:Generator_UserColumnName="prenume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nrcard" msprop:Generator_ColumnVarNameInTable="columnnrcard" msprop:Generator_ColumnPropNameInRow="nrcard" msprop:Generator_ColumnPropNameInTable="nrcardColumn" msprop:Generator_UserColumnName="nrcard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="reparatie" msprop:Generator_TableClassName="reparatieDataTable" msprop:Generator_TableVarName="tablereparatie" msprop:Generator_RowChangedName="reparatieRowChanged" msprop:Generator_TablePropName="reparatie" msprop:Generator_RowDeletingName="reparatieRowDeleting" msprop:Generator_RowChangingName="reparatieRowChanging" msprop:Generator_RowEvHandlerName="reparatieRowChangeEventHandler" msprop:Generator_RowDeletedName="reparatieRowDeleted" msprop:Generator_RowClassName="reparatieRow" msprop:Generator_UserTableName="reparatie" msprop:Generator_RowEvArgName="reparatieRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fk_masina" msprop:Generator_ColumnVarNameInTable="columnfk_masina" msprop:Generator_ColumnPropNameInRow="fk_masina" msprop:Generator_ColumnPropNameInTable="fk_masinaColumn" msprop:Generator_UserColumnName="fk_masina">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descriere" msprop:Generator_ColumnVarNameInTable="columndescriere" msprop:Generator_ColumnPropNameInRow="descriere" msprop:Generator_ColumnPropNameInTable="descriereColumn" msprop:Generator_UserColumnName="descriere" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="supplier" msprop:Generator_TableClassName="supplierDataTable" msprop:Generator_TableVarName="tablesupplier" msprop:Generator_RowChangedName="supplierRowChanged" msprop:Generator_TablePropName="supplier" msprop:Generator_RowDeletingName="supplierRowDeleting" msprop:Generator_RowChangingName="supplierRowChanging" msprop:Generator_RowEvHandlerName="supplierRowChangeEventHandler" msprop:Generator_RowDeletedName="supplierRowDeleted" msprop:Generator_RowClassName="supplierRow" msprop:Generator_UserTableName="supplier" msprop:Generator_RowEvArgName="supplierRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon" msprop:Generator_ColumnVarNameInTable="columntelefon" msprop:Generator_ColumnPropNameInRow="telefon" msprop:Generator_ColumnPropNameInTable="telefonColumn" msprop:Generator_UserColumnName="telefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tip" msprop:Generator_TableClassName="tipDataTable" msprop:Generator_TableVarName="tabletip" msprop:Generator_RowChangedName="tipRowChanged" msprop:Generator_TablePropName="tip" msprop:Generator_RowDeletingName="tipRowDeleting" msprop:Generator_RowChangingName="tipRowChanging" msprop:Generator_RowEvHandlerName="tipRowChangeEventHandler" msprop:Generator_RowDeletedName="tipRowDeleted" msprop:Generator_RowClassName="tipRow" msprop:Generator_UserTableName="tip" msprop:Generator_RowEvArgName="tipRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nume" msprop:Generator_ColumnVarNameInTable="columnnume" msprop:Generator_ColumnPropNameInRow="nume" msprop:Generator_ColumnPropNameInTable="numeColumn" msprop:Generator_UserColumnName="nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tip_brevet" msprop:Generator_TableClassName="tip_brevetDataTable" msprop:Generator_TableVarName="tabletip_brevet" msprop:Generator_RowChangedName="tip_brevetRowChanged" msprop:Generator_TablePropName="tip_brevet" msprop:Generator_RowDeletingName="tip_brevetRowDeleting" msprop:Generator_RowChangingName="tip_brevetRowChanging" msprop:Generator_RowEvHandlerName="tip_brevetRowChangeEventHandler" msprop:Generator_RowDeletedName="tip_brevetRowDeleted" msprop:Generator_RowClassName="tip_brevetRow" msprop:Generator_UserTableName="tip_brevet" msprop:Generator_RowEvArgName="tip_brevetRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="tip" msprop:Generator_ColumnVarNameInTable="columntip" msprop:Generator_ColumnPropNameInRow="tip" msprop:Generator_ColumnPropNameInTable="tipColumn" msprop:Generator_UserColumnName="tip" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="utilizare_dispozitiv" msprop:Generator_TableClassName="utilizare_dispozitivDataTable" msprop:Generator_TableVarName="tableutilizare_dispozitiv" msprop:Generator_RowChangedName="utilizare_dispozitivRowChanged" msprop:Generator_TablePropName="utilizare_dispozitiv" msprop:Generator_RowDeletingName="utilizare_dispozitivRowDeleting" msprop:Generator_RowChangingName="utilizare_dispozitivRowChanging" msprop:Generator_RowEvHandlerName="utilizare_dispozitivRowChangeEventHandler" msprop:Generator_RowDeletedName="utilizare_dispozitivRowDeleted" msprop:Generator_RowClassName="utilizare_dispozitivRow" msprop:Generator_UserTableName="utilizare_dispozitiv" msprop:Generator_RowEvArgName="utilizare_dispozitivRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fk_mecanic" msprop:Generator_ColumnVarNameInTable="columnfk_mecanic" msprop:Generator_ColumnPropNameInRow="fk_mecanic" msprop:Generator_ColumnPropNameInTable="fk_mecanicColumn" msprop:Generator_UserColumnName="fk_mecanic" type="xs:int" />
+              <xs:element name="fk_dispozitiv" msprop:Generator_ColumnVarNameInTable="columnfk_dispozitiv" msprop:Generator_ColumnPropNameInRow="fk_dispozitiv" msprop:Generator_ColumnPropNameInTable="fk_dispozitivColumn" msprop:Generator_UserColumnName="fk_dispozitiv" type="xs:int" />
+              <xs:element name="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vanzare" msprop:Generator_TableClassName="vanzareDataTable" msprop:Generator_TableVarName="tablevanzare" msprop:Generator_RowChangedName="vanzareRowChanged" msprop:Generator_TablePropName="vanzare" msprop:Generator_RowDeletingName="vanzareRowDeleting" msprop:Generator_RowChangingName="vanzareRowChanging" msprop:Generator_RowEvHandlerName="vanzareRowChangeEventHandler" msprop:Generator_RowDeletedName="vanzareRowDeleted" msprop:Generator_RowClassName="vanzareRow" msprop:Generator_UserTableName="vanzare" msprop:Generator_RowEvArgName="vanzareRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fk_angajat" msprop:Generator_ColumnVarNameInTable="columnfk_angajat" msprop:Generator_ColumnPropNameInRow="fk_angajat" msprop:Generator_ColumnPropNameInTable="fk_angajatColumn" msprop:Generator_UserColumnName="fk_angajat" type="xs:int" />
+              <xs:element name="fk_proprietar" msprop:Generator_ColumnVarNameInTable="columnfk_proprietar" msprop:Generator_ColumnPropNameInRow="fk_proprietar" msprop:Generator_ColumnPropNameInTable="fk_proprietarColumn" msprop:Generator_UserColumnName="fk_proprietar" type="xs:int" />
+              <xs:element name="fk_nume_piesa" msprop:Generator_ColumnVarNameInTable="columnfk_nume_piesa" msprop:Generator_ColumnPropNameInRow="fk_nume_piesa" msprop:Generator_ColumnPropNameInTable="fk_nume_piesaColumn" msprop:Generator_UserColumnName="fk_nume_piesa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="amount" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_UserColumnName="amount" type="xs:int" />
+              <xs:element name="fk_supplier_piesa" msprop:Generator_ColumnVarNameInTable="columnfk_supplier_piesa" msprop:Generator_ColumnPropNameInRow="fk_supplier_piesa" msprop:Generator_ColumnPropNameInTable="fk_supplier_piesaColumn" msprop:Generator_UserColumnName="fk_supplier_piesa" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Table_1" msprop:Generator_TableClassName="Table_1DataTable" msprop:Generator_TableVarName="tableTable_1" msprop:Generator_RowChangedName="Table_1RowChanged" msprop:Generator_TablePropName="Table_1" msprop:Generator_RowDeletingName="Table_1RowDeleting" msprop:Generator_RowChangingName="Table_1RowChanging" msprop:Generator_RowEvHandlerName="Table_1RowChangeEventHandler" msprop:Generator_RowDeletedName="Table_1RowDeleted" msprop:Generator_RowClassName="Table_1Row" msprop:Generator_UserTableName="Table_1" msprop:Generator_RowEvArgName="Table_1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sdd" msprop:Generator_ColumnVarNameInTable="columnsdd" msprop:Generator_ColumnPropNameInRow="sdd" msprop:Generator_ColumnPropNameInTable="sddColumn" msprop:Generator_UserColumnName="sdd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:mecanic_nereparate" />
+      <xs:field xpath="mstns:vin" />
+    </xs:unique>
+    <xs:unique name="mecanic_view_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:mecanic_view" />
+      <xs:field xpath="mstns:vin" />
+    </xs:unique>
+    <xs:unique name="vanzator_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vanzator" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="brevet_dispozitiv_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:brevet_dispozitiv" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="director_tehnic_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:director_tehnic" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="dispozitiv_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dispozitiv" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="fabricant_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fabricant" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="masina_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:masina" />
+      <xs:field xpath="mstns:vin" />
+    </xs:unique>
+    <xs:unique name="mecanic_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:mecanic" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="operatie_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:operatie" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="piesa_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:piesa" />
+      <xs:field xpath="mstns:nume" />
+      <xs:field xpath="mstns:fk_supplier" />
+    </xs:unique>
+    <xs:unique name="proprietar_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:proprietar" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="reparatie_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:reparatie" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="supplier_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:supplier" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tip_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tip" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="tip_brevet_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tip_brevet" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="utilizare_dispozitiv_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:utilizare_dispozitiv" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="vanzare_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vanzare" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Vanzator_Directortehnic" msdata:parent="director_tehnic" msdata:child="vanzator" msdata:parentkey="id" msdata:childkey="fk_director_tehnic" msprop:Generator_UserChildTable="vanzator" msprop:Generator_ChildPropName="GetvanzatorRows" msprop:Generator_UserRelationName="FK_Vanzator_Directortehnic" msprop:Generator_ParentPropName="director_tehnicRow" msprop:Generator_RelationVarName="relationFK_Vanzator_Directortehnic" msprop:Generator_UserParentTable="director_tehnic" />
+      <msdata:Relationship name="FK_brevet_dispozitiv_tip_brevet" msdata:parent="tip_brevet" msdata:child="brevet_dispozitiv" msdata:parentkey="id" msdata:childkey="tipbrevet" msprop:Generator_UserChildTable="brevet_dispozitiv" msprop:Generator_ChildPropName="Getbrevet_dispozitivRows" msprop:Generator_UserRelationName="FK_brevet_dispozitiv_tip_brevet" msprop:Generator_ParentPropName="tip_brevetRow" msprop:Generator_RelationVarName="relationFK_brevet_dispozitiv_tip_brevet" msprop:Generator_UserParentTable="tip_brevet" />
+      <msdata:Relationship name="FK_mecanic" msdata:parent="mecanic" msdata:child="brevet_dispozitiv" msdata:parentkey="id" msdata:childkey="fk_mecanic" msprop:Generator_UserChildTable="brevet_dispozitiv" msprop:Generator_ChildPropName="Getbrevet_dispozitivRows" msprop:Generator_UserRelationName="FK_mecanic" msprop:Generator_ParentPropName="mecanicRow" msprop:Generator_RelationVarName="relationFK_mecanic" msprop:Generator_UserParentTable="mecanic" />
+      <msdata:Relationship name="FK_dispozitiv_tip_brevet" msdata:parent="tip_brevet" msdata:child="dispozitiv" msdata:parentkey="id" msdata:childkey="brevet_necesar" msprop:Generator_UserChildTable="dispozitiv" msprop:Generator_ChildPropName="GetdispozitivRows" msprop:Generator_UserRelationName="FK_dispozitiv_tip_brevet" msprop:Generator_ParentPropName="tip_brevetRow" msprop:Generator_RelationVarName="relationFK_dispozitiv_tip_brevet" msprop:Generator_UserParentTable="tip_brevet" />
+      <msdata:Relationship name="FK_masina_fabricant" msdata:parent="fabricant" msdata:child="masina" msdata:parentkey="id" msdata:childkey="fk_brand" msprop:Generator_UserChildTable="masina" msprop:Generator_ChildPropName="GetmasinaRows" msprop:Generator_UserRelationName="FK_masina_fabricant" msprop:Generator_RelationVarName="relationFK_masina_fabricant" msprop:Generator_UserParentTable="fabricant" msprop:Generator_ParentPropName="fabricantRow" />
+      <msdata:Relationship name="FK_masina_proprietar" msdata:parent="proprietar" msdata:child="masina" msdata:parentkey="id" msdata:childkey="fk_proprietar" msprop:Generator_UserChildTable="masina" msprop:Generator_ChildPropName="GetmasinaRows" msprop:Generator_UserRelationName="FK_masina_proprietar" msprop:Generator_ParentPropName="proprietarRow" msprop:Generator_RelationVarName="relationFK_masina_proprietar" msprop:Generator_UserParentTable="proprietar" />
+      <msdata:Relationship name="FK_masina_tip" msdata:parent="tip" msdata:child="masina" msdata:parentkey="id" msdata:childkey="fk_tip" msprop:Generator_UserChildTable="masina" msprop:Generator_ChildPropName="GetmasinaRows" msprop:Generator_UserRelationName="FK_masina_tip" msprop:Generator_ParentPropName="tipRow" msprop:Generator_RelationVarName="relationFK_masina_tip" msprop:Generator_UserParentTable="tip" />
+      <msdata:Relationship name="FK_mecanic_director_tehnic" msdata:parent="director_tehnic" msdata:child="mecanic" msdata:parentkey="id" msdata:childkey="fk_director" msprop:Generator_UserChildTable="mecanic" msprop:Generator_ChildPropName="GetmecanicRows" msprop:Generator_UserRelationName="FK_mecanic_director_tehnic" msprop:Generator_RelationVarName="relationFK_mecanic_director_tehnic" msprop:Generator_UserParentTable="director_tehnic" msprop:Generator_ParentPropName="director_tehnicRow" />
+      <msdata:Relationship name="FK_operatie_mecanic" msdata:parent="mecanic" msdata:child="operatie" msdata:parentkey="id" msdata:childkey="fk_mecanic" msprop:Generator_UserChildTable="operatie" msprop:Generator_ChildPropName="GetoperatieRows" msprop:Generator_UserRelationName="FK_operatie_mecanic" msprop:Generator_RelationVarName="relationFK_operatie_mecanic" msprop:Generator_UserParentTable="mecanic" msprop:Generator_ParentPropName="mecanicRow" />
+      <msdata:Relationship name="FK_operatie_piesa" msdata:parent="piesa" msdata:child="operatie" msdata:parentkey="nume fk_supplier" msdata:childkey="fk_piesa fk_supplier" msprop:Generator_UserChildTable="operatie" msprop:Generator_ChildPropName="GetoperatieRows" msprop:Generator_UserRelationName="FK_operatie_piesa" msprop:Generator_ParentPropName="piesaRowParent" msprop:Generator_RelationVarName="relationFK_operatie_piesa" msprop:Generator_UserParentTable="piesa" />
+      <msdata:Relationship name="FK_operatie_reparatie" msdata:parent="reparatie" msdata:child="operatie" msdata:parentkey="id" msdata:childkey="fk_reparatie" msprop:Generator_UserChildTable="operatie" msprop:Generator_ChildPropName="GetoperatieRows" msprop:Generator_UserRelationName="FK_operatie_reparatie" msprop:Generator_ParentPropName="reparatieRow" msprop:Generator_RelationVarName="relationFK_operatie_reparatie" msprop:Generator_UserParentTable="reparatie" />
+      <msdata:Relationship name="FK_piesa_supplier" msdata:parent="supplier" msdata:child="piesa" msdata:parentkey="id" msdata:childkey="fk_supplier" msprop:Generator_UserChildTable="piesa" msprop:Generator_ChildPropName="GetpiesaRows" msprop:Generator_UserRelationName="FK_piesa_supplier" msprop:Generator_ParentPropName="supplierRow" msprop:Generator_RelationVarName="relationFK_piesa_supplier" msprop:Generator_UserParentTable="supplier" />
+      <msdata:Relationship name="FK_reparatie_masina" msdata:parent="masina" msdata:child="reparatie" msdata:parentkey="vin" msdata:childkey="fk_masina" msprop:Generator_UserChildTable="reparatie" msprop:Generator_ChildPropName="GetreparatieRows" msprop:Generator_UserRelationName="FK_reparatie_masina" msprop:Generator_RelationVarName="relationFK_reparatie_masina" msprop:Generator_UserParentTable="masina" msprop:Generator_ParentPropName="masinaRow" />
+      <msdata:Relationship name="FK_utilizare_dispozitiv_dispozitiv" msdata:parent="dispozitiv" msdata:child="utilizare_dispozitiv" msdata:parentkey="id" msdata:childkey="fk_dispozitiv" msprop:Generator_UserChildTable="utilizare_dispozitiv" msprop:Generator_ChildPropName="Getutilizare_dispozitivRows" msprop:Generator_UserRelationName="FK_utilizare_dispozitiv_dispozitiv" msprop:Generator_RelationVarName="relationFK_utilizare_dispozitiv_dispozitiv" msprop:Generator_UserParentTable="dispozitiv" msprop:Generator_ParentPropName="dispozitivRow" />
+      <msdata:Relationship name="FK_utilizare_dispozitiv_mecanic" msdata:parent="mecanic" msdata:child="utilizare_dispozitiv" msdata:parentkey="id" msdata:childkey="fk_mecanic" msprop:Generator_UserChildTable="utilizare_dispozitiv" msprop:Generator_ChildPropName="Getutilizare_dispozitivRows" msprop:Generator_UserRelationName="FK_utilizare_dispozitiv_mecanic" msprop:Generator_RelationVarName="relationFK_utilizare_dispozitiv_mecanic" msprop:Generator_UserParentTable="mecanic" msprop:Generator_ParentPropName="mecanicRow" />
+      <msdata:Relationship name="FK_vanzare_angajat" msdata:parent="vanzator" msdata:child="vanzare" msdata:parentkey="id" msdata:childkey="fk_angajat" msprop:Generator_UserChildTable="vanzare" msprop:Generator_ChildPropName="GetvanzareRows" msprop:Generator_UserRelationName="FK_vanzare_angajat" msprop:Generator_RelationVarName="relationFK_vanzare_angajat" msprop:Generator_UserParentTable="vanzator" msprop:Generator_ParentPropName="vanzatorRow" />
+      <msdata:Relationship name="FK_vanzare_piesa" msdata:parent="piesa" msdata:child="vanzare" msdata:parentkey="nume fk_supplier" msdata:childkey="fk_nume_piesa fk_supplier_piesa" msprop:Generator_UserChildTable="vanzare" msprop:Generator_ChildPropName="GetvanzareRows" msprop:Generator_UserRelationName="FK_vanzare_piesa" msprop:Generator_RelationVarName="relationFK_vanzare_piesa" msprop:Generator_UserParentTable="piesa" msprop:Generator_ParentPropName="piesaRowParent" />
+      <msdata:Relationship name="FK_vanzare_proprietar" msdata:parent="proprietar" msdata:child="vanzare" msdata:parentkey="id" msdata:childkey="fk_proprietar" msprop:Generator_UserChildTable="vanzare" msprop:Generator_ChildPropName="GetvanzareRows" msprop:Generator_UserRelationName="FK_vanzare_proprietar" msprop:Generator_RelationVarName="relationFK_vanzare_proprietar" msprop:Generator_UserParentTable="proprietar" msprop:Generator_ParentPropName="proprietarRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
