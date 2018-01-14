@@ -37,3 +37,19 @@ H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.SqlServer.dll
 H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.xml
 H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.SqlServer.xml
 H:\Fac\III\Proiectfinal\bazededate\obj\Debug\Interop.COMSVCSLib.dll
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\bazededate.exe.config
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\bazededate.exe
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\bazededate.pdb
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\EntityFramework.dll
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\EntityFramework.xml
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.csprojResolveAssemblyReference.cache
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\Interop.COMSVCSLib.dll
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.csproj.ResolveComReference.cache
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.down.resources
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.Form2.resources
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.Properties.Resources.resources
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.csproj.GenerateResource.Cache
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.exe
+C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.pdb

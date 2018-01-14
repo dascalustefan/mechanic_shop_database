@@ -163,17 +163,21 @@ namespace bazededate
             {
                 variable1 = text_nume.Text;
                 variable2 = text_prenume.Text;
+
+                if (variable1 == null || variable2 == null) throw new Exception();
             }
             if(type==0)
             {
                 variable1 = textvin.Text;
                 
-
+                if(variable1 == null) throw new Exception();
             }
             if(type==3)
             {
                 variable1 = name.Text;
-                    variable2 = pass.Text;
+                variable2 = pass.Text;
+
+                if (variable1 == null || variable2 == null) throw new Exception();
             }
             if(type==4)
             {
@@ -181,6 +185,8 @@ namespace bazededate
                 variable2 = prenumec.Text;
                 variable3 = telefonc.Text;
                 variable4 = numarcardc.Text;
+
+                if (variable1 == null || variable2 == null || variable3 == null) throw new Exception();
             }
             if(type==5)
             {
@@ -189,28 +195,36 @@ namespace bazededate
                 variable3 = textBox2.Text;
                 variable4 = textBox1.Text;
                 variable5 = textBox5.Text;
+
+                if (variable1 == null || variable2 == null || variable4 == null || variable5 == null) throw new Exception();
             }
             if(type==6)
             {
                 variable1 = textBox6.Text;
                 variable2 = textBox7.Text;
+
+                if(variable1 == null || variable2 == null) throw new Exception();
             }
             if (type == 7)
             {
                 variable1 = textBox8.Text;
                 variable2 = textBox9.Text;
 
+                if(variable2 == null) throw new Exception();
             }
             if (type == 8)
             {
                 variable1 = textBox10.Text;
                
+                if (variable1==null) throw new Exception();
             }
             if (type == 9)
             {
                 variable1 = textBox11.Text;
                 variable2 = textBox12.Text;
                 variable3 = textBox13.Text;
+
+                if (variable1 == null || variable2 == null || variable3 == null) throw new Exception();
 
             }
             if(type==10)
@@ -219,7 +233,8 @@ namespace bazededate
                 variable2 = textBox15.Text;
                 variable3 = textBox16.Text;
                 variable4 = textBox17.Text;
-                
+
+                if (variable1 == null || variable2 == null || variable3 == null || variable4 == null) throw new Exception();
             }
             if (type == 11)
             {
@@ -228,6 +243,7 @@ namespace bazededate
                 
                 variable4 = textBox19.Text;
 
+                if (variable1 == null || variable2 == null || variable4 == null) throw new Exception();
             }
             if (type == 12)
             {
@@ -236,6 +252,7 @@ namespace bazededate
                 variable3 = textBox24.Text;
                 variable4 = textBox25.Text;
 
+                if (variable1 == null || variable2 == null || variable3 == null || variable4 == null) throw new Exception();
             }
             if (type == 13)
             {
@@ -244,6 +261,7 @@ namespace bazededate
                 variable3 = textBox28.Text;
                 variable4 = textBox29.Text;
 
+                if (variable1 == null || variable2 == null || variable3 == null || variable4 == null) throw new Exception();
             }
             if (type == 14)
             {
@@ -253,30 +271,35 @@ namespace bazededate
                 variable4 = textBox33.Text;
                 variable5 = textBox34.Text;
 
+                if (variable1 == null) throw new Exception();
             }
             if (type == 15)
             {
                 variable1 = textBox35.Text;
                 variable2 = textBox36.Text;
-                
 
+                if (variable1 == null) throw new Exception();
             }
             if (type == 16)
             {
                 variable1 = textBox37.Text;
-                
 
+                if (variable1 == null) throw new Exception();
 
             }
             if(type==17)
             {
                 variable1 = textBox38.Text;
                 variable2 = textBox39.Text;
+
+                if (variable1 == null || variable2 == null) throw new Exception();
             }
             if (type == 18)
             {
                 variable1 = textBox40.Text;
                 variable2 = textBox41.Text;
+
+                if (variable1 == null || variable2 == null) throw new Exception();
             }
             this.Close();
         }
@@ -304,6 +327,11 @@ namespace bazededate
         private void label46_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
