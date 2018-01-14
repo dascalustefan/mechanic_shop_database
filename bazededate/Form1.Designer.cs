@@ -33,7 +33,14 @@ namespace bazededate
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-       
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         #region Windows Form Designer generated code
 
@@ -159,7 +166,7 @@ namespace bazededate
             this.Client.Size = new System.Drawing.Size(53, 50);
             this.Client.TabIndex = 1;
             this.Client.UseVisualStyleBackColor = true;
-            
+            this.Client.Click += new System.EventHandler(this.Client_Click);
             // 
             // label1
             // 
@@ -170,7 +177,7 @@ namespace bazededate
             this.label1.Size = new System.Drawing.Size(67, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Client";
-            
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // mecanic
             // 
@@ -183,7 +190,7 @@ namespace bazededate
             this.mecanic.Size = new System.Drawing.Size(71, 50);
             this.mecanic.TabIndex = 3;
             this.mecanic.UseVisualStyleBackColor = true;
-            
+            this.mecanic.Click += new System.EventHandler(this.mecanic_Click);
             // 
             // label2
             // 
@@ -194,7 +201,7 @@ namespace bazededate
             this.label2.Size = new System.Drawing.Size(90, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mecanic";
-            
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -207,7 +214,7 @@ namespace bazededate
             this.button1.Size = new System.Drawing.Size(67, 50);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = true;
-            
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Vanzator
             // 
@@ -229,7 +236,7 @@ namespace bazededate
             this.button2.Size = new System.Drawing.Size(177, 47);
             this.button2.TabIndex = 7;
             this.button2.UseVisualStyleBackColor = true;
-            
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -268,7 +275,7 @@ namespace bazededate
             this.minimize.Size = new System.Drawing.Size(66, 42);
             this.minimize.TabIndex = 10;
             this.minimize.UseVisualStyleBackColor = true;
-            
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
             // 
             // button3
             // 
@@ -278,7 +285,7 @@ namespace bazededate
             this.button3.Size = new System.Drawing.Size(66, 49);
             this.button3.TabIndex = 9;
             this.button3.UseVisualStyleBackColor = true;
-           
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel_vanz
             // 
@@ -349,7 +356,7 @@ namespace bazededate
             this.button7.TabIndex = 20;
             this.button7.Text = "adauga client";
             this.button7.UseVisualStyleBackColor = false;
-            
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button24
             // 
@@ -364,7 +371,7 @@ namespace bazededate
             this.button24.TabIndex = 36;
             this.button24.Text = "adauga fabricanti de masini";
             this.button24.UseVisualStyleBackColor = false;
-            
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button8
             // 
@@ -379,7 +386,7 @@ namespace bazededate
             this.button8.TabIndex = 21;
             this.button8.Text = "adauga piese";
             this.button8.UseVisualStyleBackColor = false;
-            
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button23
             // 
@@ -394,7 +401,7 @@ namespace bazededate
             this.button23.TabIndex = 35;
             this.button23.Text = "adauga furnizori";
             this.button23.UseVisualStyleBackColor = false;
-            
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button9
             // 
@@ -409,7 +416,7 @@ namespace bazededate
             this.button9.TabIndex = 22;
             this.button9.Text = "vanzare noua";
             this.button9.UseVisualStyleBackColor = false;
-            
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button22
             // 
@@ -424,7 +431,7 @@ namespace bazededate
             this.button22.TabIndex = 34;
             this.button22.Text = "adauga tipuri de masini";
             this.button22.UseVisualStyleBackColor = false;
-           
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button10
             // 
@@ -439,7 +446,7 @@ namespace bazededate
             this.button10.TabIndex = 23;
             this.button10.Text = "vezi vanzari";
             this.button10.UseVisualStyleBackColor = false;
-            
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button21
             // 
@@ -454,7 +461,7 @@ namespace bazededate
             this.button21.TabIndex = 33;
             this.button21.Text = "adauga dispozitiv";
             this.button21.UseVisualStyleBackColor = false;
-            
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button11
             // 
@@ -469,7 +476,7 @@ namespace bazededate
             this.button11.TabIndex = 24;
             this.button11.Text = "toti clientii";
             this.button11.UseVisualStyleBackColor = false;
-            
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button20
             // 
@@ -484,7 +491,7 @@ namespace bazededate
             this.button20.TabIndex = 32;
             this.button20.Text = "cauta piese dupa clienti";
             this.button20.UseVisualStyleBackColor = false;
-            
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
@@ -499,7 +506,7 @@ namespace bazededate
             this.button19.TabIndex = 31;
             this.button19.Text = "toate piesele vandute";
             this.button19.UseVisualStyleBackColor = false;
-           
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button15
             // 
@@ -514,7 +521,7 @@ namespace bazededate
             this.button15.TabIndex = 27;
             this.button15.Text = "cauta client dupa nume";
             this.button15.UseVisualStyleBackColor = false;
-           
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button18
             // 
@@ -529,7 +536,7 @@ namespace bazededate
             this.button18.TabIndex = 30;
             this.button18.Text = "cauta piese dupa furnizor ";
             this.button18.UseVisualStyleBackColor = false;
-            
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button16
             // 
@@ -544,7 +551,7 @@ namespace bazededate
             this.button16.TabIndex = 28;
             this.button16.Text = "toate piesele";
             this.button16.UseVisualStyleBackColor = false;
-            
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -559,7 +566,7 @@ namespace bazededate
             this.button17.TabIndex = 29;
             this.button17.Text = "cauta piese dupa nume";
             this.button17.UseVisualStyleBackColor = false;
-            
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // dataGridView2
             // 
@@ -577,9 +584,9 @@ namespace bazededate
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.panel_vanz);
-            this.panel2.Controls.Add(this.panel_mecanic);
             this.panel2.Controls.Add(this.panel_director);
+            this.panel2.Controls.Add(this.panel_mecanic);
+            this.panel2.Controls.Add(this.panel_vanz);
             this.panel2.Controls.Add(this.panel_client);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 149);
@@ -658,7 +665,7 @@ namespace bazededate
             this.button30.TabIndex = 31;
             this.button30.Text = "toate piesele dupa supplier";
             this.button30.UseVisualStyleBackColor = false;
-            
+            this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
             // button29
             // 
@@ -673,7 +680,7 @@ namespace bazededate
             this.button29.TabIndex = 30;
             this.button29.Text = "cauta piesa dupa supplier";
             this.button29.UseVisualStyleBackColor = false;
-            
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // button14
             // 
@@ -688,7 +695,7 @@ namespace bazededate
             this.button14.TabIndex = 29;
             this.button14.Text = "toate piesele";
             this.button14.UseVisualStyleBackColor = false;
-            
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button12
             // 
@@ -703,7 +710,7 @@ namespace bazededate
             this.button12.TabIndex = 28;
             this.button12.Text = "arata toti mecanicii";
             this.button12.UseVisualStyleBackColor = false;
-            
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // label4
             // 
@@ -727,7 +734,7 @@ namespace bazededate
             this.button28.TabIndex = 26;
             this.button28.Text = "adauga reparatie";
             this.button28.UseVisualStyleBackColor = false;
-            
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button27
             // 
@@ -742,7 +749,7 @@ namespace bazededate
             this.button27.TabIndex = 25;
             this.button27.Text = "adauga operatie";
             this.button27.UseVisualStyleBackColor = false;
-            
+            this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
             // button26
             // 
@@ -757,7 +764,7 @@ namespace bazededate
             this.button26.TabIndex = 24;
             this.button26.Text = "brevete disponibile";
             this.button26.UseVisualStyleBackColor = false;
-            
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // button25
             // 
@@ -772,7 +779,7 @@ namespace bazededate
             this.button25.TabIndex = 23;
             this.button25.Text = "vezi masini nereparate";
             this.button25.UseVisualStyleBackColor = false;
-            
+            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // add_client
             // 
@@ -787,7 +794,7 @@ namespace bazededate
             this.add_client.TabIndex = 22;
             this.add_client.Text = "adauga client";
             this.add_client.UseVisualStyleBackColor = false;
-            
+            this.add_client.Click += new System.EventHandler(this.add_client_Click);
             // 
             // Adaugare_brevet
             // 
@@ -802,7 +809,7 @@ namespace bazededate
             this.Adaugare_brevet.TabIndex = 6;
             this.Adaugare_brevet.Text = "Adaugare brevet";
             this.Adaugare_brevet.UseVisualStyleBackColor = false;
-            
+            this.Adaugare_brevet.Click += new System.EventHandler(this.Adaugare_brevet_Click);
             // 
             // add_masina
             // 
@@ -817,7 +824,7 @@ namespace bazededate
             this.add_masina.TabIndex = 20;
             this.add_masina.Text = "adauga masina";
             this.add_masina.UseVisualStyleBackColor = false;
-           
+            this.add_masina.Click += new System.EventHandler(this.add_masina_Click);
             // 
             // operatii_masina
             // 
@@ -832,7 +839,7 @@ namespace bazededate
             this.operatii_masina.TabIndex = 15;
             this.operatii_masina.Text = "toate operatiile masinii";
             this.operatii_masina.UseVisualStyleBackColor = false;
-            
+            this.operatii_masina.Click += new System.EventHandler(this.operatii_masina_Click);
             // 
             // vezi_dispozitive
             // 
@@ -847,7 +854,7 @@ namespace bazededate
             this.vezi_dispozitive.TabIndex = 7;
             this.vezi_dispozitive.Text = "Vezi dispozitive";
             this.vezi_dispozitive.UseVisualStyleBackColor = false;
-            
+            this.vezi_dispozitive.Click += new System.EventHandler(this.vezi_dispozitive_Click);
             // 
             // piese_dupa_nume
             // 
@@ -862,7 +869,7 @@ namespace bazededate
             this.piese_dupa_nume.TabIndex = 14;
             this.piese_dupa_nume.Text = "cauta piese dupa nume";
             this.piese_dupa_nume.UseVisualStyleBackColor = false;
-           
+            this.piese_dupa_nume.Click += new System.EventHandler(this.piese_dupa_nume_Click);
             // 
             // cauta_dispozitiv
             // 
@@ -877,7 +884,7 @@ namespace bazededate
             this.cauta_dispozitiv.TabIndex = 8;
             this.cauta_dispozitiv.Text = "Cauta dispozitiv";
             this.cauta_dispozitiv.UseVisualStyleBackColor = false;
-            
+            this.cauta_dispozitiv.Click += new System.EventHandler(this.cauta_dispozitiv_Click);
             // 
             // piese_disponibile
             // 
@@ -892,7 +899,7 @@ namespace bazededate
             this.piese_disponibile.TabIndex = 13;
             this.piese_disponibile.Text = "arata piesele disponibile";
             this.piese_disponibile.UseVisualStyleBackColor = false;
-            
+            this.piese_disponibile.Click += new System.EventHandler(this.piese_disponibile_Click);
             // 
             // Cauta_masina
             // 
@@ -907,7 +914,7 @@ namespace bazededate
             this.Cauta_masina.TabIndex = 9;
             this.Cauta_masina.Text = "Cauta masina";
             this.Cauta_masina.UseVisualStyleBackColor = false;
-            
+            this.Cauta_masina.Click += new System.EventHandler(this.Cauta_masina_Click);
             // 
             // button6
             // 
@@ -922,7 +929,7 @@ namespace bazededate
             this.button6.TabIndex = 12;
             this.button6.Text = "arata toate masinile";
             this.button6.UseVisualStyleBackColor = false;
-            
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button13
             // 
@@ -937,7 +944,7 @@ namespace bazededate
             this.button13.TabIndex = 10;
             this.button13.Text = "cauta reparatia dupa masina";
             this.button13.UseVisualStyleBackColor = false;
-           
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox1
             // 
@@ -960,7 +967,7 @@ namespace bazededate
             this.adauga_client.TabIndex = 3;
             this.adauga_client.Text = "cauta proprietar dupa nume";
             this.adauga_client.UseVisualStyleBackColor = false;
-            
+            this.adauga_client.Click += new System.EventHandler(this.adauga_client_Click);
             // 
             // descrierea_reparatiei
             // 
@@ -975,7 +982,7 @@ namespace bazededate
             this.descrierea_reparatiei.TabIndex = 5;
             this.descrierea_reparatiei.Text = "descrierea reparatiei";
             this.descrierea_reparatiei.UseVisualStyleBackColor = false;
-           
+            this.descrierea_reparatiei.Click += new System.EventHandler(this.descrierea_reparatiei_Click);
             // 
             // cauta_vin
             // 
@@ -990,7 +997,7 @@ namespace bazededate
             this.cauta_vin.TabIndex = 1;
             this.cauta_vin.Text = "Cauta dupa vin";
             this.cauta_vin.UseVisualStyleBackColor = false;
-            
+            this.cauta_vin.Click += new System.EventHandler(this.cauta_vin_Click);
             // 
             // display_repairs
             // 
@@ -1005,7 +1012,7 @@ namespace bazededate
             this.display_repairs.TabIndex = 2;
             this.display_repairs.Text = "arata toate reparatiile";
             this.display_repairs.UseVisualStyleBackColor = false;
-            
+            this.display_repairs.Click += new System.EventHandler(this.display_repairs_Click);
             // 
             // panel_director
             // 
@@ -1054,7 +1061,7 @@ namespace bazededate
             this.stergi_piesa.TabIndex = 43;
             this.stergi_piesa.Text = "stergi piesa";
             this.stergi_piesa.UseVisualStyleBackColor = false;
-            
+            this.stergi_piesa.Click += new System.EventHandler(this.stergi_piesa_Click);
             // 
             // stergi_fabricant
             // 
@@ -1069,7 +1076,7 @@ namespace bazededate
             this.stergi_fabricant.TabIndex = 42;
             this.stergi_fabricant.Text = "stergi fabricant";
             this.stergi_fabricant.UseVisualStyleBackColor = false;
-           
+            this.stergi_fabricant.Click += new System.EventHandler(this.stergi_fabricant_Click);
             // 
             // stergi_supplier
             // 
@@ -1084,7 +1091,7 @@ namespace bazededate
             this.stergi_supplier.TabIndex = 41;
             this.stergi_supplier.Text = "stergi supplier";
             this.stergi_supplier.UseVisualStyleBackColor = false;
-           
+            this.stergi_supplier.Click += new System.EventHandler(this.stergi_supplier_Click);
             // 
             // panel4
             // 
@@ -1130,7 +1137,7 @@ namespace bazededate
             this.stergi_dispozitiv.TabIndex = 40;
             this.stergi_dispozitiv.Text = "stergi dispozitiv";
             this.stergi_dispozitiv.UseVisualStyleBackColor = false;
-            
+            this.stergi_dispozitiv.Click += new System.EventHandler(this.stergi_dispozitiv_Click);
             // 
             // stergi_client
             // 
@@ -1145,7 +1152,7 @@ namespace bazededate
             this.stergi_client.TabIndex = 39;
             this.stergi_client.Text = "stergi client";
             this.stergi_client.UseVisualStyleBackColor = false;
-            
+            this.stergi_client.Click += new System.EventHandler(this.stergi_client_Click);
             // 
             // stergi_mecanic
             // 
@@ -1160,7 +1167,7 @@ namespace bazededate
             this.stergi_mecanic.TabIndex = 38;
             this.stergi_mecanic.Text = "stergi mecanic";
             this.stergi_mecanic.UseVisualStyleBackColor = false;
-           
+            this.stergi_mecanic.Click += new System.EventHandler(this.stergi_mecanic_Click);
             // 
             // cauta_clienti
             // 
@@ -1175,7 +1182,7 @@ namespace bazededate
             this.cauta_clienti.TabIndex = 37;
             this.cauta_clienti.Text = "cauta client";
             this.cauta_clienti.UseVisualStyleBackColor = false;
-            
+            this.cauta_clienti.Click += new System.EventHandler(this.cauta_clienti_Click);
             // 
             // vizualizare_Reparatie
             // 
@@ -1190,7 +1197,7 @@ namespace bazededate
             this.vizualizare_Reparatie.TabIndex = 36;
             this.vizualizare_Reparatie.Text = "vizualizare reparatii";
             this.vizualizare_Reparatie.UseVisualStyleBackColor = false;
-            
+            this.vizualizare_Reparatie.Click += new System.EventHandler(this.vizualizare_Reparatie_Click);
             // 
             // stocul_pieselor
             // 
@@ -1205,7 +1212,7 @@ namespace bazededate
             this.stocul_pieselor.TabIndex = 34;
             this.stocul_pieselor.Text = "verifica stocul pieselor";
             this.stocul_pieselor.UseVisualStyleBackColor = false;
-            
+            this.stocul_pieselor.Click += new System.EventHandler(this.stocul_pieselor_Click);
             // 
             // cauta_Vanzare
             // 
@@ -1220,7 +1227,7 @@ namespace bazededate
             this.cauta_Vanzare.TabIndex = 33;
             this.cauta_Vanzare.Text = "cauta vanzare dupa vanzatori";
             this.cauta_Vanzare.UseVisualStyleBackColor = false;
-            
+            this.cauta_Vanzare.Click += new System.EventHandler(this.cauta_Vanzare_Click);
             // 
             // monitorizare_vanzatori
             // 
@@ -1235,7 +1242,7 @@ namespace bazededate
             this.monitorizare_vanzatori.TabIndex = 31;
             this.monitorizare_vanzatori.Text = "monitorizare vanzatori";
             this.monitorizare_vanzatori.UseVisualStyleBackColor = false;
-           
+            this.monitorizare_vanzatori.Click += new System.EventHandler(this.monitorizare_vanzatori_Click);
             // 
             // monitorizare_mecanici
             // 
@@ -1264,7 +1271,7 @@ namespace bazededate
             this.ads_client.TabIndex = 29;
             this.ads_client.Text = "adauga client";
             this.ads_client.UseVisualStyleBackColor = false;
-           
+            this.ads_client.Click += new System.EventHandler(this.ads_client_Click);
             // 
             // adauga_mecanic
             // 
@@ -1279,7 +1286,7 @@ namespace bazededate
             this.adauga_mecanic.TabIndex = 28;
             this.adauga_mecanic.Text = "adauga mecanic";
             this.adauga_mecanic.UseVisualStyleBackColor = false;
-           
+            this.adauga_mecanic.Click += new System.EventHandler(this.adauga_mecanic_Click);
             // 
             // adauga_vanzator
             // 
@@ -1294,7 +1301,7 @@ namespace bazededate
             this.adauga_vanzator.TabIndex = 27;
             this.adauga_vanzator.Text = "adauga vanzator";
             this.adauga_vanzator.UseVisualStyleBackColor = false;
-          
+            this.adauga_vanzator.Click += new System.EventHandler(this.adauga_vanzator_Click);
             // 
             // dataGridView3
             // 
@@ -1354,7 +1361,7 @@ namespace bazededate
             this.button5.TabIndex = 1;
             this.button5.Text = "Search by name";
             this.button5.UseVisualStyleBackColor = false;
-            
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -1369,7 +1376,7 @@ namespace bazededate
             this.button4.TabIndex = 0;
             this.button4.Text = "Search by vin";
             this.button4.UseVisualStyleBackColor = false;
-           
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // down
             // 
@@ -1390,7 +1397,7 @@ namespace bazededate
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Redballs Garage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-           // this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_vanz.ResumeLayout(false);

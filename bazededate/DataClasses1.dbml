@@ -99,7 +99,7 @@
       <Column Name="fk_supplier" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="piesa_operatie" Member="operaties" ThisKey="nume,fk_supplier" OtherKey="fk_piesa,fk_supplier" Type="operatie" />
       <Association Name="piesa_vanzare" Member="vanzares" ThisKey="nume,fk_supplier" OtherKey="fk_nume_piesa,fk_supplier_piesa" Type="vanzare" />
-      <Association Name="supplier_piesa" Member="supplier" ThisKey="fk_supplier" OtherKey="id" Type="supplier" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="supplier_piesa" Member="supplier" ThisKey="fk_supplier" OtherKey="id" Type="supplier" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.proprietar" Member="proprietars">
@@ -166,26 +166,6 @@
       <Association Name="vanzator_vanzare" Member="vanzator" ThisKey="fk_angajat" OtherKey="id" Type="vanzator" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="piesa_vanzare" Member="piesa" ThisKey="fk_nume_piesa,fk_supplier_piesa" OtherKey="nume,fk_supplier" Type="piesa" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="proprietar_vanzare" Member="proprietar" ThisKey="fk_proprietar" OtherKey="id" Type="proprietar" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.mecanic_view" Member="mecanic_views">
-    <Type Name="mecanic_view">
-      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tip" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Column Name="brand" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.mecanic_nereparate" Member="mecanic_nereparates">
-    <Type Name="mecanic_nereparate">
-      <Column Name="vin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tip" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="culoare" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Column Name="brand" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="nume" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="telefon" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.adauga_mecanic" Method="adauga_mecanic">
@@ -574,7 +554,7 @@
   <Function Name="dbo.toate_piesele_vandute" Method="toate_piesele_vandute">
     <ElementType Name="toate_piesele_vanduteResult">
       <Column Name="nume" Type="System.String" DbType="NChar(90) NOT NULL" CanBeNull="false" />
-      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[cantitate vanduta]" Member="cantitate_vanduta" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

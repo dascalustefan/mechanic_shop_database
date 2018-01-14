@@ -9,3 +9,14 @@ C:\Users\dascalu stefan\source\repos\bazededate\bazededate\obj\Debug\bazededate.
 C:\Users\dascalu stefan\source\repos\bazededate\bazededate\obj\Debug\bazededate.pdb
 C:\Users\dascalu stefan\source\repos\bazededate\bazededate\obj\Debug\bazededate.down.resources
 C:\Users\dascalu stefan\source\repos\bazededate\bazededate\obj\Debug\bazededate.Form2.resources
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.csprojResolveAssemblyReference.cache
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.down.resources
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.Form2.resources
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.Properties.Resources.resources
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.csproj.GenerateResource.Cache
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.csproj.CoreCompileInputs.cache
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.exe
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\Debug\bazededate.pdb
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.exe.config
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.exe
+C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.pdb

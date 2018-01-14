@@ -224,9 +224,9 @@ namespace bazededate
             if (type == 11)
             {
                 variable1 = textBox18.Text;
-                variable2 = textBox19.Text;
-                variable3 = textBox20.Text;
-                variable4 = textBox21.Text;
+                variable2 = textBox21.Text;
+                
+                variable4 = textBox19.Text;
 
             }
             if (type == 12)
@@ -248,7 +248,7 @@ namespace bazededate
             if (type == 14)
             {
                 variable1 = textBox30.Text;
-                variable2 = textBox31.Text;
+               
                 variable3 = textBox32.Text;
                 variable4 = textBox33.Text;
                 variable5 = textBox34.Text;
@@ -282,6 +282,26 @@ namespace bazededate
         }
 
         private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void add_vanzator_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label46_Click(object sender, EventArgs e)
         {
 
         }
