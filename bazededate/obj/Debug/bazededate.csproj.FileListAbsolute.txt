@@ -20,3 +20,20 @@ C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\obj\D
 C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.exe.config
 C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.exe
 C:\Users\dascalu stefan\source\repos\bd_project_good\bazededate\bazededate\bin\Debug\bazededate.pdb
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\bazededate.exe.config
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\bazededate.exe
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\bazededate.pdb
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.csprojResolveAssemblyReference.cache
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.down.resources
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.Form2.resources
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.Properties.Resources.resources
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.csproj.GenerateResource.Cache
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.csproj.CoreCompileInputs.cache
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.exe
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.pdb
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\bazededate.csproj.ResolveComReference.cache
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.dll
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.SqlServer.dll
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.xml
+H:\Fac\III\Proiectfinal\bazededate\bin\Debug\EntityFramework.SqlServer.xml
+H:\Fac\III\Proiectfinal\bazededate\obj\Debug\Interop.COMSVCSLib.dll

@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Linq;
 using System.Globalization;
+using System.Transactions;
 
+using System.Runtime.InteropServices;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace bazededate
 {
-
+   
     public partial class down : Form
     {
-        int id=-1;
+        int id=0;
         string name, pass;
         DataClasses1DataContext dbContext;
         string variable1;
@@ -43,6 +46,16 @@ namespace bazededate
             panel_vanz.Visible = false;
             panel_director.Visible = false;
             dataGridView4.Visible = false;
+
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 235, 0);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
+            dataGridView2.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 235, 0);
+            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
+            dataGridView3.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 235, 0);
+            dataGridView3.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
+            dataGridView4.RowsDefaultCellStyle.BackColor = Color.FromArgb(255, 235, 0);
+            dataGridView4.AlternatingRowsDefaultCellStyle.BackColor = Color.Green;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -158,14 +171,43 @@ namespace bazededate
             dataGridView4.Visible = true;
         }
 
+        public string createsalt(int size)
+        {
+            var rng = new System.Security.Cryptography.RNGCryptoServiceProvider();
+            var buff = new byte[pass.Length];
+            rng.GetBytes(buff);
+            return Convert.ToBase64String(buff);
+        }
+
+        public string generatesha256hash(string input, string salt)
+        {
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(input + salt);
+            System.Security.Cryptography.SHA256Managed sha256hashstring = new System.Security.Cryptography.SHA256Managed();
+            byte[] hash = sha256hashstring.ComputeHash(bytes);
+
+            //return Convert.ToString(hash);
+            string something = Encoding.ASCII.GetString(hash);
+            return something;
+        }
+
+
+
         private void mecanic_Click(object sender, EventArgs e)
         {
             Form2 dialog1 = new Form2(3);//vinclient
             dialog1.ShowDialog();
             name = dialog1.variable1;
             pass = dialog1.variable2;
+
+            string salt = name;
+            string hashedpassword = generatesha256hash(pass, salt);
+
+            pass = hashedpassword;
+
+
            
-           
+
+
             var projection = (from rep in dbContext.mecanics
                               where name==rep.nume.Replace(" ",string.Empty)+" "+rep.prenume.Replace(" ", string.Empty)
 
@@ -181,9 +223,8 @@ namespace bazededate
             {
                 if(projection[0].parola.Replace(" ",string.Empty)==pass)
                 {
-                        id = projection[0].id;
                         label4.Text = "ID:" + id;
-                        
+                        id = projection[0].id;
                         if (a != null)
                         a.Visible = false;
                     a = panel_mecanic;
@@ -277,10 +318,10 @@ namespace bazededate
             var projection = (from rep in dbContext.brevet_dispozitivs
                               join mecs in dbContext.mecanics on rep.fk_mecanic equals mecs.id
                               join brev in dbContext.tip_brevets on rep.tipbrevet equals brev.id
-                              where mecs.nume.Replace(" ", "")+" "+mecs.prenume.Replace(" ", "") == name
+                              where mecs.nume.Replace(" ", "") + " " + mecs.prenume.Replace(" ", "") == name
 
 
-                              select new { brev.tip,brev.id }).ToList();
+                              select new { brev.tip, brev.id }).ToList();
             dataGridView1.DataSource = projection;
         }
 
@@ -357,13 +398,13 @@ namespace bazededate
             nou.nrcard = variable4;
             dbContext.proprietars.InsertOnSubmit(nou);
             dbContext.SubmitChanges();
-            var projection = (from pro in dbContext.proprietars
-                              select pro).ToList();
+            //var projection = (from pro in dbContext.proprietars       //sa vedem toti clientii
+            //                  select pro).ToList();
 
 
 
 
-             dataGridView1.DataSource = projection;
+            // dataGridView1.DataSource = projection;
 
         }
 
@@ -384,7 +425,7 @@ namespace bazededate
             
             if (projection5.Count() != 0)
             {
-                MessageBox.Show("Insert right stuff for this to work1.");
+                MessageBox.Show("Insert right data for this to work1.");
                 return;
             }
             var projection = (from rep in dbContext.tips //verific tipul
@@ -392,7 +433,7 @@ namespace bazededate
                               select rep.id).ToList();
             if(projection.Count()==0)
             {
-                MessageBox.Show("Insert right stuff for this to work3.");
+                MessageBox.Show("Insert right data for this to work3.");
                 return;
             }
             var projection2 = (from rep in dbContext.fabricants//verific fabricantul
@@ -400,7 +441,7 @@ namespace bazededate
                               select rep.id).ToList();
             if (projection2.Count() == 0)
             {
-                MessageBox.Show("Insert right stuff for this to work4.");
+                MessageBox.Show("Insert right data for this to work4.");
                 return;
             }
             var projection4 = (from rep in dbContext.proprietars//verific proprietarul
@@ -408,7 +449,7 @@ namespace bazededate
                                  select rep.nume).ToList();
             if (projection4.Count() == 0)
             {
-                MessageBox.Show("Insert right stuff for this to work5.");
+                MessageBox.Show("Insert right data for this to work5.");
                 return;
             }
             masina nou = new masina();
@@ -419,13 +460,13 @@ namespace bazededate
             nou.fk_proprietar = Int32.Parse(variable5);
             dbContext.masinas.InsertOnSubmit(nou);
             dbContext.SubmitChanges();
-            var projection3 = (from pro in dbContext.masinas
-                              select pro).ToList();
+            //var projection3 = (from pro in dbContext.masinas      //asa vedem toate masinile
+            //                  select pro).ToList();
 
 
 
 
-            dataGridView1.DataSource = projection3;
+            //dataGridView1.DataSource = projection3;
         }
 
         private void cauta_vin_Click(object sender, EventArgs e)
@@ -446,7 +487,7 @@ namespace bazededate
 
         private void piese_disponibile_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = dbContext.search_piese_disponibile().ToList();
+            dataGridView1.DataSource = dbContext.Stocul_pieselor().ToList();
         }
 
         private void piese_dupa_nume_Click(object sender, EventArgs e)
@@ -483,15 +524,15 @@ namespace bazededate
             Form2 dialog1 = new Form2(14);//====================================add operatie
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;//reparatie
-            
+            variable2 = dialog1.variable2;//mecanic
             variable3 = dialog1.variable3;//descriere
         
             variable4 = dialog1.variable4;//piesa
             variable5 = dialog1.variable5;//supplier
-            if (variable4 =="" || variable5 == "")
+            if (variable4 == null || variable5 == null)
                 dbContext.add_operatie_withoutp(Int32.Parse(variable1), id, variable3);
             else
-            dbContext.add_operatie_withp(Int32.Parse(variable1),id, variable3, variable4, Int32.Parse(variable5));
+            dbContext.add_operatie_withp(Int32.Parse(variable1), id, variable3, variable4, Int32.Parse(variable5));
             
         }
 
@@ -531,7 +572,7 @@ namespace bazededate
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;//codsa adauge fabricant ----
             variable2 = dialog1.variable2;
-            dbContext.Add_fabricant(variable1, variable2);
+            dbContext.Add_Dispozitiv(Int32.Parse(variable1), variable2);
             //---7
         }
 
@@ -562,11 +603,7 @@ namespace bazededate
 
         private void button19_Click(object sender, EventArgs e)
         {
-
-
-            var projection = dbContext.toate_piesele_vandute().ToList();
-            dataGridView2.DataSource = projection;
-
+            dataGridView2.DataSource = dbContext.toate_piesele_vandute().ToList();
             //toate piesele vandute---------------------------------------------------
         }
 
@@ -643,43 +680,26 @@ namespace bazededate
 
         private void button9_Click(object sender, EventArgs e)
         {
-           
+
             Form2 dialog1 = new Form2(10);//vinclient
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;
             variable2 = dialog1.variable2;
             variable3 = dialog1.variable3;
             variable4 = dialog1.variable4;
-            dbContext.Add_Vanzare(id, Int32.Parse(variable1), variable2, Int32.Parse(variable3), Int32.Parse(variable4));
-            //vanzare vnz = new vanzare
-            //{
-            //    fk_angajat = id,
-            //    fk_proprietar = Int32.Parse(variable1),
-            //    fk_nume_piesa = variable2,
-            //    amount = Int32.Parse(variable3),
-            //    fk_supplier_piesa= Int32.Parse(variable4)
-            //    // …
-            //};
 
-            //// Add the new object to the Orders collection.
-            //dbContext.vanzares.InsertOnSubmit(vnz);
-            //dbContext.SubmitChanges();
-            //// Submit the change to the database.
-            ////  try
-            ////   {
-            ////     dbContext.SubmitChanges();
-            ////  }
-            //// catch (exception a)
-            ////  {
-            //// }/*Exception e)
-            //// {
-            ////  Console.WriteLine(e);
-            //// Make some adjustments.
-            //// ...
-            //// Try again.
-            ////  db.SubmitChanges();
-            ////  }*/
-            ////addvanzare--------------------------------------------------------
+            dbContext.Add_Vanzare(id, Convert.ToInt32(variable2), variable3, Convert.ToInt32(variable4), Convert.ToInt32(variable1));
+
+            using (TransactionScope trans = new TransactionScope())
+            {
+                int result = 0;
+                result = this.dbContext.ExecuteCommand("UPDATE       piesa SET                cantitate = cantitate - vanzare.amount FROM            piesa INNER JOIN vanzare ON piesa.nume = vanzare.fk_nume_piesa AND piesa.fk_supplier = vanzare.fk_supplier_piesa");
+                if(result!=0)
+                trans.Complete();
+            }
+
+
+            //addvanzare--------------------------------------------------------
         }
 
         private void adauga_vanzator_Click(object sender, EventArgs e)
@@ -688,23 +708,23 @@ namespace bazededate
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;
             variable2 = dialog1.variable2;
-            
+
             variable4 = dialog1.variable4;
             DateTime localDate = DateTime.Now;
-            dbContext.adauga_vanzator(variable1, variable2, localDate,decimal.Parse(variable4), id);
+            dbContext.adauga_vanzator(variable1, variable2, localDate, decimal.Parse(variable4), id);
             //add vanzator-------------------------------------------------------
         }
 
         private void adauga_mecanic_Click(object sender, EventArgs e)
         {
-            int id = 0;
+            //int id = 0;
             Form2 dialog1 = new Form2(12);//vinclient
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;
             variable2 = dialog1.variable2;
             variable3 = dialog1.variable3;
             variable4 = dialog1.variable4;
-            dbContext.adauga_mecanic(variable1, variable2, variable3, DateTime.ParseExact(variable4, "mm dd yyyy", CultureInfo.InvariantCulture), id);
+            dbContext.adauga_mecanic(variable1, variable2, variable3, DateTime.Now, id);
             //add_mecnic------------------------------------------
         }
 
@@ -739,7 +759,17 @@ namespace bazededate
         {
             variable1=textBox3.Text;//vanzari dupa vanzatori
             int v = Int32.Parse(textBox3.Text);
-          
+
+            var projection = (from rep in dbContext.vanzares
+
+                              join des in dbContext.vanzators on rep.fk_angajat equals des.id
+                              where des.id == v 
+
+
+
+                              select rep).ToList();
+            dataGridView3.DataSource = projection;
+
         }
 
         private void stocul_pieselor_Click(object sender, EventArgs e)
@@ -751,7 +781,20 @@ namespace bazededate
 
         private void vizualizare_Reparatie_Click(object sender, EventArgs e)
         {
-            dataGridView3.DataSource = dbContext.Stocul_pieselor().ToList();
+
+            var projection = (from rep in dbContext.reparaties
+
+                              join des in dbContext.masinas on rep.fk_masina equals des.vin
+                              join dess in dbContext.fabricants on des.fk_brand equals dess.id
+                              select new
+                              {
+                                  id=rep.id,
+                                  vin=rep.fk_masina,
+                                  masina=dess.nume
+                              }).ToList();
+            dataGridView3.DataSource = projection;
+
+            //dataGridView3.DataSource = dbContext.Stocul_pieselor().ToList();
             //---------------------------viazualizare reparatii
         }
 
@@ -768,7 +811,20 @@ namespace bazededate
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;
             variable2 = dialog1.variable2;
-            dbContext.cauta_client(variable1,variable2);
+
+            var projection = (from rep in dbContext.proprietars
+                              join repp in dbContext.masinas on rep.id equals repp.fk_proprietar
+                              where rep.nume == variable1 && rep.prenume == variable2
+                              select new
+                              {
+                                    nume=rep.nume,
+                                    prenume=rep.prenume,
+                                    masinna=repp.vin,
+                                    card=rep.nrcard
+                              }).ToList();
+            dataGridView3.DataSource = projection;
+
+            //dbContext.cauta_client(variable1,variable2);
             //--------------------------------------cauta client
         }
 
@@ -836,7 +892,10 @@ namespace bazededate
                               where repas.nume.Replace(" ", string.Empty) == variable1
                               select new { rep.nume,rep.cantitate,supplier=repas.nume,supplier_id=repas.id }).ToList();
             dataGridView1.DataSource = projection;
+
+
         }
+
 
         private void button30_Click(object sender, EventArgs e)
         {
@@ -878,18 +937,27 @@ namespace bazededate
             dataGridView1.DataSource = projection;
         }
 
+        private void monitorizare_mecanici_Click(object sender, EventArgs e)
+        {
+            dataGridView3.DataSource = dbContext.monit_mecanic().ToList();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void button25_Click(object sender, EventArgs e)
         {
             //-------------------------------------------vazi masini nereparate
 
            dataGridView1.DataSource= dbContext.Masini_Nereparate().ToList();
 
-            // var projection = (db
-
-            // /
-            //                 select rep).ToList();
-            //
-            // dataGridView1.DataSource = projection;
         }
     }
 
