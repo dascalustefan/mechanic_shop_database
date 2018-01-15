@@ -10,9 +10,14 @@ using System.Windows.Forms;
 using System.Data.Linq;
 using System.Globalization;
 using System.Transactions;
+using OfficeOpenXml;
 
+using System.IO;
+
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System.Runtime.InteropServices;
-using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 
 namespace bazededate
 {
@@ -951,6 +956,560 @@ namespace bazededate
         {
 
         }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            #region Common Part
+            PdfPTable pdfTableBlank = new PdfPTable(1);
+            PdfPTable pdfTableFooter = new PdfPTable(1);
+            pdfTableFooter.DefaultCell.BorderWidth = 0;
+            pdfTableFooter.WidthPercentage = 100;
+            pdfTableFooter.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            Chunk cnkFooter = new Chunk("ATM", FontFactory.GetFont("Times New Roman"));
+            cnkFooter.Font.Size = 10;
+            pdfTableFooter.AddCell(new Phrase(cnkFooter));
+
+            pdfTableBlank.AddCell(new Phrase(" "));
+            pdfTableBlank.DefaultCell.Border = 0;
+            #endregion
+
+            #region Page
+            #endregion
+            #region Section-1 <Header FORM>
+            PdfPTable pdftable1 = new PdfPTable(1);
+            PdfPTable pdftable2 = new PdfPTable(1);
+            PdfPTable pdftable3 = new PdfPTable(2);
+
+            System.Drawing.Font fontH1 = new System.Drawing.Font("Courier", 16);
+            pdftable1.WidthPercentage = 88;
+            pdftable1.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.BorderWidth = 0;
+
+            pdftable2.WidthPercentage = 88;
+            pdftable2.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.BorderWidth = 0;
+
+            pdftable3.DefaultCell.Padding = 5;
+            pdftable3.WidthPercentage = 88;
+            pdftable3.DefaultCell.BorderWidth = 0.5f;
+
+            Chunk c1 = new Chunk("Raport", FontFactory.GetFont("Times New Roman"));
+            c1.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c1.Font.SetStyle(0);
+            c1.Font.Size = 14;
+            Phrase p1 = new Phrase();
+            p1.Add(c1);
+            pdftable1.AddCell(p1);
+            Chunk c2 = new Chunk("Garaj auto", FontFactory.GetFont("Times New Roman"));
+            c2.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c2.Font.SetStyle(0);
+            c2.Font.Size = 11;
+            Phrase p2 = new Phrase();
+            p2.Add(c2);
+            pdftable2.AddCell(p2);
+            Chunk c3 = new Chunk("Customer care", FontFactory.GetFont("Times New Roman"));
+            c3.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c3.Font.SetStyle(0);
+            c3.Font.Size = 11;
+            Phrase p3 = new Phrase();
+            p3.Add(c3);
+            pdftable2.AddCell(p3);
+
+            #endregion
+            #region Section-1 <Bill Upper>
+
+            PdfPTable pdftable4 = new PdfPTable(4);
+            pdftable4.DefaultCell.Padding = 5;
+            pdftable4.WidthPercentage = 88;
+            pdftable4.DefaultCell.BorderWidth = 0.5f;
+
+            var projection = (from rep in dbContext.proprietars
+
+                              select rep).ToList();
+            foreach (var rez in projection)
+            {
+                pdftable4.AddCell(new Phrase(rez.nume));
+                pdftable4.AddCell(new Phrase(rez.prenume));
+                pdftable4.AddCell(new Phrase(rez.nrcard));
+                pdftable4.AddCell(new Phrase(rez.telefon));
+                //pdftable4.AddCell(new Phrase("Vendor"));
+                //pdftable4.AddCell(new Phrase("Mihai"));
+                //pdftable4.AddCell(new Phrase("Adress"));
+                //pdftable4.AddCell(new Phrase("Pakistan"));
+            }
+
+            #endregion
+            #region Seection table
+            pdftable3.AddCell(new Phrase("Company name"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            #endregion
+
+            #region Pdf Generation
+            string folderPath = "H:\\PDF\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            int fileCount = Directory.GetFiles(@"H:\\PDF").Length;
+            string strFilename = "NewReport" + (fileCount + 1) + ".pdf";
+            using (FileStream stream = new FileStream(folderPath + strFilename, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                #region page-1
+                pdfDoc.Add(pdftable1);
+                pdfDoc.Add(pdftable2);
+                pdfDoc.Add(pdfTableBlank);
+                pdfDoc.Add(pdftable4);
+                pdfDoc.Add(pdfTableFooter);
+                pdfDoc.NewPage();
+                #endregion
+
+                pdfDoc.Close();
+                stream.Close();
+            }
+            #endregion
+
+            #region Display PDF
+            System.Diagnostics.Process.Start(folderPath + "\\" + strFilename);
+            #endregion
+
+
+            ////////////excel
+
+            string spreadsheetPath = "activities" + (fileCount + 1) + ".xlsx";
+            File.Delete(spreadsheetPath);
+            FileInfo spreadsheetInfo = new FileInfo(spreadsheetPath);
+
+            ExcelPackage pck = new ExcelPackage(spreadsheetInfo);
+            var activitiesWorksheet = pck.Workbook.Worksheets.Add("Activities");
+            activitiesWorksheet.Cells["A1"].Value = "Nume";
+            activitiesWorksheet.Cells["B1"].Value = "Prenume";
+            activitiesWorksheet.Cells["C1"].Value = "Card";
+            activitiesWorksheet.Cells["D1"].Value = "Telefon";
+            activitiesWorksheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            // populate spreadsheet with data
+            int currentRow = 2;
+            foreach (var activity in projection)
+            {
+                activitiesWorksheet.Cells["A" + currentRow.ToString()].Value = activity.nume;
+                activitiesWorksheet.Cells["B" + currentRow.ToString()].Value = activity.prenume;
+                activitiesWorksheet.Cells["C" + currentRow.ToString()].Value = activity.nrcard;
+                activitiesWorksheet.Cells["D" + currentRow.ToString()].Value = activity.telefon;
+
+                currentRow++;
+            }
+
+            activitiesWorksheet.View.FreezePanes(2, 1);
+
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Formula = "SUM(B2:B" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Formula = "SUM(C2:C" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Formula = "SUM(D2:D" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+            pck.Save();
+        }
+
+        private void button31_Click_1(object sender, EventArgs e)
+        {
+            #region Common Part
+            PdfPTable pdfTableBlank = new PdfPTable(1);
+            PdfPTable pdfTableFooter = new PdfPTable(1);
+            pdfTableFooter.DefaultCell.BorderWidth = 0;
+            pdfTableFooter.WidthPercentage = 100;
+            pdfTableFooter.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            Chunk cnkFooter = new Chunk("ATM", FontFactory.GetFont("Times New Roman"));
+            cnkFooter.Font.Size = 10;
+            pdfTableFooter.AddCell(new Phrase(cnkFooter));
+
+            pdfTableBlank.AddCell(new Phrase(" "));
+            pdfTableBlank.DefaultCell.Border = 0;
+            #endregion
+
+            #region Page
+            #endregion
+            #region Section-1 <Header FORM>
+            PdfPTable pdftable1 = new PdfPTable(1);
+            PdfPTable pdftable2 = new PdfPTable(1);
+            PdfPTable pdftable3 = new PdfPTable(2);
+
+            System.Drawing.Font fontH1 = new System.Drawing.Font("Courier", 16);
+            pdftable1.WidthPercentage = 88;
+            pdftable1.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.BorderWidth = 0;
+
+            pdftable2.WidthPercentage = 88;
+            pdftable2.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.BorderWidth = 0;
+
+            pdftable3.DefaultCell.Padding = 5;
+            pdftable3.WidthPercentage = 88;
+            pdftable3.DefaultCell.BorderWidth = 0.5f;
+
+            Chunk c1 = new Chunk("Raport", FontFactory.GetFont("Times New Roman"));
+            c1.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c1.Font.SetStyle(0);
+            c1.Font.Size = 14;
+            Phrase p1 = new Phrase();
+            p1.Add(c1);
+            pdftable1.AddCell(p1);
+            Chunk c2 = new Chunk("Garaj auto", FontFactory.GetFont("Times New Roman"));
+            c2.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c2.Font.SetStyle(0);
+            c2.Font.Size = 11;
+            Phrase p2 = new Phrase();
+            p2.Add(c2);
+            pdftable2.AddCell(p2);
+            Chunk c3 = new Chunk("Stock care", FontFactory.GetFont("Times New Roman"));
+            c3.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c3.Font.SetStyle(0);
+            c3.Font.Size = 11;
+            Phrase p3 = new Phrase();
+            p3.Add(c3);
+            pdftable2.AddCell(p3);
+
+            #endregion
+            #region Section-1 <Bill Upper>
+
+            PdfPTable pdftable4 = new PdfPTable(2);
+            pdftable4.DefaultCell.Padding = 5;
+            pdftable4.WidthPercentage = 88;
+            pdftable4.DefaultCell.BorderWidth = 0.5f;
+
+            var projection = (from rep in dbContext.piesas
+
+                              select rep).ToList();
+            foreach (var rez in projection)
+            {
+                pdftable4.AddCell(new Phrase(rez.nume));
+                pdftable4.AddCell(new Phrase(rez.cantitate.ToString()));
+                
+                //pdftable4.AddCell(new Phrase("Vendor"));
+                //pdftable4.AddCell(new Phrase("Mihai"));
+                //pdftable4.AddCell(new Phrase("Adress"));
+                //pdftable4.AddCell(new Phrase("Pakistan"));
+            }
+
+            #endregion
+            #region Seection table
+            pdftable3.AddCell(new Phrase("Company name"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            #endregion
+
+            #region Pdf Generation
+            string folderPath = "H:\\PDF\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            int fileCount = Directory.GetFiles(@"H:\\PDF").Length;
+            string strFilename = "NewReport" + (fileCount + 1) + ".pdf";
+            using (FileStream stream = new FileStream(folderPath + strFilename, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                #region page-1
+                pdfDoc.Add(pdftable1);
+                pdfDoc.Add(pdftable2);
+                pdfDoc.Add(pdfTableBlank);
+                pdfDoc.Add(pdftable4);
+                pdfDoc.Add(pdfTableFooter);
+                pdfDoc.NewPage();
+                #endregion
+
+                pdfDoc.Close();
+                stream.Close();
+            }
+            #endregion
+
+            #region Display PDF
+            System.Diagnostics.Process.Start(folderPath + "\\" + strFilename);
+            #endregion
+
+
+            /////////////excel
+            string spreadsheetPath = "activities" + (fileCount + 1) + ".xlsx";
+            File.Delete(spreadsheetPath);
+            FileInfo spreadsheetInfo = new FileInfo(spreadsheetPath);
+
+            ExcelPackage pck = new ExcelPackage(spreadsheetInfo);
+            var activitiesWorksheet = pck.Workbook.Worksheets.Add("Activities");
+            activitiesWorksheet.Cells["A1"].Value = "Name";
+            activitiesWorksheet.Cells["B1"].Value = "Cantitate";
+            //activitiesWorksheet.Cells["C1"].Value = "Tuesday";
+            //activitiesWorksheet.Cells["D1"].Value = "Wednesday";
+            activitiesWorksheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            // populate spreadsheet with data
+            int currentRow = 2;
+            foreach (var activity in projection)
+            {
+                activitiesWorksheet.Cells["A" + currentRow.ToString()].Value = activity.nume;
+                activitiesWorksheet.Cells["B" + currentRow.ToString()].Value = activity.cantitate.ToString();
+                //activitiesWorksheet.Cells["C" + currentRow.ToString()].Value = activity.TuesdayHours;
+                //activitiesWorksheet.Cells["D" + currentRow.ToString()].Value = activity.WednesdayHours;
+
+                currentRow++;
+            }
+
+            activitiesWorksheet.View.FreezePanes(2, 1);
+
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Formula = "SUM(B2:B" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Formula = "SUM(C2:C" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Formula = "SUM(D2:D" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+            pck.Save();
+
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            #region Common Part
+            PdfPTable pdfTableBlank = new PdfPTable(1);
+            PdfPTable pdfTableFooter = new PdfPTable(1);
+            pdfTableFooter.DefaultCell.BorderWidth = 0;
+            pdfTableFooter.WidthPercentage = 100;
+            pdfTableFooter.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            Chunk cnkFooter = new Chunk("ATM", FontFactory.GetFont("Times New Roman"));
+            cnkFooter.Font.Size = 10;
+            pdfTableFooter.AddCell(new Phrase(cnkFooter));
+
+            pdfTableBlank.AddCell(new Phrase(" "));
+            pdfTableBlank.DefaultCell.Border = 0;
+            #endregion
+
+            #region Page
+            #endregion
+            #region Section-1 <Header FORM>
+            PdfPTable pdftable1 = new PdfPTable(1);
+            PdfPTable pdftable2 = new PdfPTable(1);
+            PdfPTable pdftable3 = new PdfPTable(2);
+
+            System.Drawing.Font fontH1 = new System.Drawing.Font("Courier", 16);
+            pdftable1.WidthPercentage = 88;
+            pdftable1.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable1.DefaultCell.BorderWidth = 0;
+
+            pdftable2.WidthPercentage = 88;
+            pdftable2.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.VerticalAlignment = Element.ALIGN_CENTER;
+            pdftable2.DefaultCell.BorderWidth = 0;
+
+            pdftable3.DefaultCell.Padding = 5;
+            pdftable3.WidthPercentage = 88;
+            pdftable3.DefaultCell.BorderWidth = 0.5f;
+
+            Chunk c1 = new Chunk("Raport", FontFactory.GetFont("Times New Roman"));
+            c1.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c1.Font.SetStyle(0);
+            c1.Font.Size = 14;
+            Phrase p1 = new Phrase();
+            p1.Add(c1);
+            pdftable1.AddCell(p1);
+            Chunk c2 = new Chunk("Garaj auto", FontFactory.GetFont("Times New Roman"));
+            c2.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c2.Font.SetStyle(0);
+            c2.Font.Size = 11;
+            Phrase p2 = new Phrase();
+            p2.Add(c2);
+            pdftable2.AddCell(p2);
+            Chunk c3 = new Chunk("Stock care", FontFactory.GetFont("Times New Roman"));
+            c3.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            c3.Font.SetStyle(0);
+            c3.Font.Size = 11;
+            Phrase p3 = new Phrase();
+            p3.Add(c3);
+            pdftable2.AddCell(p3);
+
+            #endregion
+            #region Section-1 <Bill Upper>
+
+            PdfPTable pdftable4 = new PdfPTable(2);
+            pdftable4.DefaultCell.Padding = 5;
+            pdftable4.WidthPercentage = 88;
+            pdftable4.DefaultCell.BorderWidth = 0.5f;
+
+            var projection = (from rep in dbContext.suppliers
+
+                              select rep).ToList();
+            foreach (var rez in projection)
+            {
+                pdftable4.AddCell(new Phrase(rez.nume));
+                pdftable4.AddCell(new Phrase(rez.telefon));
+
+                //pdftable4.AddCell(new Phrase("Vendor"));
+                //pdftable4.AddCell(new Phrase("Mihai"));
+                //pdftable4.AddCell(new Phrase("Adress"));
+                //pdftable4.AddCell(new Phrase("Pakistan"));
+            }
+
+            #endregion
+            #region Seection table
+            pdftable3.AddCell(new Phrase("Company name"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            pdftable3.AddCell(new Phrase("Pakistan"));
+            #endregion
+
+            #region Pdf Generation
+            string folderPath = "H:\\PDF\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            int fileCount = Directory.GetFiles(@"H:\\PDF").Length;
+            string strFilename = "NewReport" + (fileCount + 1) + ".pdf";
+            using (FileStream stream = new FileStream(folderPath + strFilename, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                #region page-1
+                pdfDoc.Add(pdftable1);
+                pdfDoc.Add(pdftable2);
+                pdfDoc.Add(pdfTableBlank);
+                pdfDoc.Add(pdftable4);
+                pdfDoc.Add(pdfTableFooter);
+                pdfDoc.NewPage();
+                #endregion
+
+                pdfDoc.Close();
+                stream.Close();
+            }
+            #endregion
+
+            #region Display PDF
+            System.Diagnostics.Process.Start(folderPath + "\\" + strFilename);
+            #endregion
+
+            //////////////excel
+
+            string spreadsheetPath = "activities"+(fileCount+1)+".xlsx";
+            File.Delete(spreadsheetPath);
+            FileInfo spreadsheetInfo = new FileInfo(spreadsheetPath);
+
+            ExcelPackage pck = new ExcelPackage(spreadsheetInfo);
+            var activitiesWorksheet = pck.Workbook.Worksheets.Add("Activities");
+            activitiesWorksheet.Cells["A1"].Value = "Name";
+            activitiesWorksheet.Cells["B1"].Value = "Telefon";
+            //activitiesWorksheet.Cells["C1"].Value = "Tuesday";
+            //activitiesWorksheet.Cells["D1"].Value = "Wednesday";
+            activitiesWorksheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+            // populate spreadsheet with data
+            int currentRow = 2;
+            foreach (var activity in projection)
+            {
+                activitiesWorksheet.Cells["A" + currentRow.ToString()].Value = activity.nume;
+                activitiesWorksheet.Cells["B" + currentRow.ToString()].Value = activity.telefon;
+                //activitiesWorksheet.Cells["C" + currentRow.ToString()].Value = activity.TuesdayHours;
+                //activitiesWorksheet.Cells["D" + currentRow.ToString()].Value = activity.WednesdayHours;
+
+                currentRow++;
+            }
+
+            activitiesWorksheet.View.FreezePanes(2, 1);
+
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Formula = "SUM(B2:B" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Formula = "SUM(C2:C" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Formula = "SUM(D2:D" + (currentRow - 1).ToString() + ")";
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Font.Bold = true;
+            //activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+            //activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+            pck.Save();
+
+
+
+        }
+
+        //private void CreateSpreadsheet(var variabila)
+        //{
+        //    string spreadsheetPath = "activities.xlsx";
+        //    File.Delete(spreadsheetPath);
+        //    FileInfo spreadsheetInfo = new FileInfo(spreadsheetPath);
+
+        //    ExcelPackage pck = new ExcelPackage(spreadsheetInfo);
+        //    var activitiesWorksheet = pck.Workbook.Worksheets.Add("Activities");
+        //    activitiesWorksheet.Cells["A1"].Value = "Name";
+        //    activitiesWorksheet.Cells["B1"].Value = "Monday";
+        //    activitiesWorksheet.Cells["C1"].Value = "Tuesday";
+        //    activitiesWorksheet.Cells["D1"].Value = "Wednesday";
+        //    activitiesWorksheet.Cells["A1:D1"].Style.Font.Bold = true;
+
+        //    // populate spreadsheet with data
+        //    int currentRow = 2;
+        //    foreach (var activity in activities)
+        //    {
+        //        activitiesWorksheet.Cells["A" + currentRow.ToString()].Value = activity.Name;
+        //        activitiesWorksheet.Cells["B" + currentRow.ToString()].Value = activity.MondayHours;
+        //        activitiesWorksheet.Cells["C" + currentRow.ToString()].Value = activity.TuesdayHours;
+        //        activitiesWorksheet.Cells["D" + currentRow.ToString()].Value = activity.WednesdayHours;
+
+        //        currentRow++;
+        //    }
+
+        //    activitiesWorksheet.View.FreezePanes(2, 1);
+
+        //    activitiesWorksheet.Cells["B" + (currentRow).ToString()].Formula = "SUM(B2:B" + (currentRow - 1).ToString() + ")";
+        //    activitiesWorksheet.Cells["C" + (currentRow).ToString()].Formula = "SUM(C2:C" + (currentRow - 1).ToString() + ")";
+        //    activitiesWorksheet.Cells["D" + (currentRow).ToString()].Formula = "SUM(D2:D" + (currentRow - 1).ToString() + ")";
+        //    activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Font.Bold = true;
+        //    activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Font.Bold = true;
+        //    activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Font.Bold = true;
+        //    activitiesWorksheet.Cells["B" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+        //    activitiesWorksheet.Cells["C" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+        //    activitiesWorksheet.Cells["D" + (currentRow).ToString()].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+        //    pck.Save();
+        //}
 
         private void button25_Click(object sender, EventArgs e)
         {

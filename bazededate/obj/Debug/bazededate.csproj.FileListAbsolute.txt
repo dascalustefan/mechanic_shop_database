@@ -53,3 +53,25 @@ C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Proj
 C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.csproj.GenerateResource.Cache
 C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.exe
 C:\Users\Alexandru\OneDrive\Cursuri\An 3 Sem 1\Baze de Date (Varga_Timofte)\Project\__github__\proiect-final-baze-de-date\bazededate\obj\Debug\bazededate.pdb
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\bazededate.exe.config
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\bazededate.exe
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\bazededate.pdb
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EntityFramework.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EntityFramework.SqlServer.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\itextsharp.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\itextsharp.pdfa.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EntityFramework.xml
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EntityFramework.SqlServer.xml
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\itextsharp.xml
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.csprojResolveAssemblyReference.cache
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\Interop.COMSVCSLib.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.csproj.ResolveComReference.cache
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.down.resources
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.Form2.resources
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.Properties.Resources.resources
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.csproj.GenerateResource.Cache
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.csproj.CoreCompileInputs.cache
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.exe
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\obj\Debug\bazededate.pdb
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EPPlus.dll
+H:\Fac\bdfinal\proiect-final-baze-de-date-master\bazededate\bin\Debug\EPPlus.xml
